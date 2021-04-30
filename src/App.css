@@ -20,11 +20,27 @@
 }
 
 .panel-grid-div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9vw, 1fr));
+  grid-gap: 0px;
   margin-left: 5vw;
   margin-top: 40px;
   width: 90vw;
-  height: 60vw;
-  background-color: #FFA353;
+  height: auto;
+}
+
+.panel-div {
+  width: auto;
+  height: 12vw;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+}
+
+.panel-row-div {
+  width: 100%;
+  height: 12vw;
+  background-color: pink;
 }
 
 .about-div {
@@ -34,39 +50,4 @@
   margin-top: 50px;
   margin-bottom: 50px;
   background-color: teal;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

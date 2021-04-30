@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: bradjste/ten-by-five
+  name: git-gateway
 
 media_folder: "public/images"
 public_folder: "images"
