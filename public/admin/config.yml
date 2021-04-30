@@ -3,7 +3,7 @@ backend:
 
 local_backend: true
 
-media_folder: "public/images"
+media_folder: "src/img"
 public_folder: "public"
 
 collections:
