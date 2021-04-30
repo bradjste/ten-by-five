@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import title from '../banner.png';
-import subtitle from '../subheader.png';
+import title from '../img/banner.png';
+import subtitle from '../img/subheader.png';
 import PanelGrid from './PanelGrid.js';
 import About from './About.js';
-
-
 
 class MainPage extends Component {
 
