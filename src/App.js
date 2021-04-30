@@ -1,5 +1,4 @@
 import MainPage from './components/MainPage';
-import { IdentityContextProvider } from 'react-netlify-identity';
 import './App.css';
 
 function App() {

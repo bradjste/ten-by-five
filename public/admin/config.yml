@@ -5,8 +5,8 @@ media_folder: "public/images"
 public_folder: "images"
 
 collections:
-  - name: settings
-    label: Settings
+  - name: Panels
+    label: Panels
     files:
       - file: public/manifest.json
         name: manifest
