@@ -5,8 +5,8 @@ media_folder: "public/images"
 public_folder: "public"
 
 collections:
-  - label: "Panels"
-    name: "panels"
+  - label: "Panel"
+    name: "panel"
     folder: "_panels"
     create: true
     fields:
