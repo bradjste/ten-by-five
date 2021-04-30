@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import img from '../../public/images/1st-Render-1.png';
 
 class Panel extends Component {
 
