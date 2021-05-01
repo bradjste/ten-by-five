@@ -4,15 +4,12 @@ backend:
 local_backend: true
 
 media_folder: "src/cms/images"
-public_folder: "public"
+public_folder: "src/cms"
 
 collections:
-  - label: "Panel"
-    name: "panel"
+  - label: "Panels"
+    name: "panels"
     folder: "src/cms/_panels"
-    create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
