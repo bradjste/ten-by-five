@@ -21,8 +21,7 @@
 
 .panel-grid-div {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(9vw, 1fr));
-  grid-gap: 0px;
+  grid-template-columns: repeat(auto-fit, minmax(9vw, 9vw));
   margin-left: 5vw;
   margin-top: 40px;
   width: 90vw;
@@ -35,6 +34,11 @@
   border-width: 1px;
   border-color: black;
   border-style: solid;
+}
+
+.panel-thumbnail {
+  width:100%;
+  height:100%;
 }
 
 .panel-row-div {
