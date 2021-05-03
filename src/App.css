@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
+
 .App {
   text-align: center;
   overflow-x: hidden;
-
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .hide {
@@ -56,8 +58,8 @@
 }
 
 #panel-grid-div:hover img{
-  cursor: pointer;
-  opacity: 0.3;
+  cursor: none;
+  opacity: 0.25;
 }
 
 .panel-div:hover img{
@@ -84,8 +86,8 @@
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  /* background-color: aquamarine; */
+  justify-content: space-evenly;
+  background-color: rgba(255, 255, 255, 0.67);
   /* background-color: rgb(228, 228, 228); */
   position:fixed;
   top:0;
@@ -94,32 +96,51 @@
 }
 
 #detail-page-panel-div div{
-  width:22vw;
+  width:26vw;
   margin-right:350px;
-  margin-top:15%;
+  margin-top:5%;
 }
 
 #detail-page-panel-div img{
   height: auto;
-  outline: none;
+  outline: 2px solid orange;
+}
+
+#detail-page-panel-div {
+  z-index: 5;
 }
 
 #detail-title {
-  font-size: 64pt;
-  margin-left: 100px;
+  font-size: 104pt;
   margin-top: 10vh;
   color: orange;
-  padding: 0;
   text-align: center;
+  z-index: 5;
+}
+
+#detail-title-coord {
+  margin-bottom: 30px;
+  margin-top: 30%; 
 }
 
 #detail-title-text {
   margin-bottom: 0;
-  width: 20vw;
+  width: auto;
   height: 20vh;
   border-width: 2px;
   border-color: orange;
   border-style: solid;
   font-size: 20pt;
   word-wrap: break-word;
+  background-color: white;
+}
+
+#detail-page-backline {
+  background-color: orange;
+  width: 100vw;
+  height: 2px;
+  position: fixed;
+  top: 65%;
+  z-index: 2;
+  margin-left: 100px;
 }

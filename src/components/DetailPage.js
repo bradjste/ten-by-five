@@ -21,6 +21,7 @@ class DetailPage extends Component {
                 <div id='detail-page-panel-div'>
                     <p>hi</p>
                 </div>
+                <div id='detail-page-backline'/>
             </div>
         )
     }
@@ -29,7 +30,7 @@ class DetailPage extends Component {
 function DetailTitle(props) {
     return(
         <div id='detail-title'>
-            <p>{props.activePanel.state.position.col + " - " + String.fromCharCode(64+props.activePanel.state.position.row)}</p>
+            <p id='detail-title-coord'>{props.activePanel.state.position.col + " - " + String.fromCharCode(64+props.activePanel.state.position.row)}</p>
             <div id='detail-title-text'>
                 <p>This is the panel title</p>
             </div>

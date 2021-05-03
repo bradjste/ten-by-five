@@ -9,13 +9,25 @@ class Panel extends Component {
                 row: props.row,
                 col: props.col
             },
-            isActive: false
+            isActive: false,
+            render: this.props.render,
+            renderUris: this.getUris()
         }
         this.loadMarkdown();
         this.setActive = this.setActive.bind(this);
     }
 
     loadMarkdown() {
+
+    }
+
+    getUris() {
+        const panelPos = ''+(((this.props.row-1)*10)+this.props.col);
+        return {
+            R2: this.props.images.filter(image => image.default.includes('2nd-Render-'+panelPos.padStart(2,'0')))[0].default
+        }    
+            
+        
 
     }
 
@@ -36,7 +48,7 @@ class Panel extends Component {
                 <img 
                     className='panel-thumbnail' 
                     alt={"Panel (" + this.props.row + "," + this.props.col + ")"} 
-                    src={this.props.uri}/>                
+                    src={this.state.renderUris.R2}/>                 
             </div>
         )
     }
