@@ -8,15 +8,15 @@ class MainPage extends Component {
 
     render() {
         return(
-            <div className = 'landing-page-div'>
-                <img src={title} alt='title graphic' className='main-banner'></img>
+            <div id='main-page-div'>
+                <img src={title} alt='title graphic' className='main-banner'/>
                 <br />
                 <img src={subtitle} alt='subtitle graphic' className='main-subheader'></img>
-                <PanelGrid />
+                <PanelGrid openPanelDetail={this.props.openPanelDetail}/>
                 <About />
             </div>
         )
     }
 }
-
+  
 export default MainPage

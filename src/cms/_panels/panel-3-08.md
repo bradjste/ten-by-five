@@ -1,5 +1,5 @@
 ---
-title: Panel 3-08
+title: Panel C-08
 date: 2021-04-30T23:25:30.508Z
 thumbnail: public/1st-Render-11.png
 ---

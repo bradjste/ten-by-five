@@ -1,5 +1,5 @@
 ---
-title: Panel 2-05
+title: Panel B-05
 date: 2021-04-30T23:25:30.508Z
 thumbnail: public/1st-Render-11.png
 ---
