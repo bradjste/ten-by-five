@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Panel from './Panel.js'
 
 class CloseUpPage extends Component {
 
