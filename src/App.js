@@ -35,8 +35,7 @@ class App extends Component{
       this.setState(() => {
         return(
           {
-            detailActive: false,
-            activePanel: null
+            detailActive: false
           }
         );
       });
@@ -44,11 +43,12 @@ class App extends Component{
     }   
   };
 
+
   render() {
     return (
-      <div className="App" onClick={()=>{this.closePanelDetailPage()}}>
+      <div className="App">
         <MainPage openPanelDetail={this.openPanelDetailPage}/>
-        {this.state.detailActive && <DetailPage closePanelDetail={this.closePanelDetailPage} activePanel={this.state.activePanel}/>}          
+        {this.state.detailActive && <DetailPage closePanelDetail={this.closePanelDetailPage} activePanel={this.state.activePanel}/>}   
       </div>
     )
   }   

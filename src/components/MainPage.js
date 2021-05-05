@@ -14,6 +14,7 @@ class MainPage extends Component {
                 <img src={subtitle} alt='subtitle graphic' className='main-subheader'></img>
                 <PanelGrid openPanelDetail={this.props.openPanelDetail}/>
                 <About />
+                <br/>
             </div>
         )
     }
