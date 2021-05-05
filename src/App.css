@@ -200,5 +200,6 @@
 #close-up-page-div img{
   width: 90vw;
   margin-top: 5vh;
+  margin-bottom: 5vh;
   outline: 3px solid orange;
 }
