@@ -46,7 +46,7 @@ class DetailPage extends Component {
             <div id='detail-page-div'>
                 <DetailTitle {...this.props}/>
                 <DetailPanel {...this.props} openPanelCloseUpPage={this.openPanelCloseUpPage}/>
-                <img id='detail-page-close-box' src={closeBoxImg} onClick={()=>this.props.closePanelDetail()}></img>
+                <img id='detail-page-close-box' src={closeBoxImg} onClick={()=>this.props.closePanelDetail()} alt='detail page close button'></img>
                 {this.state.closeUpActive && <CloseUpPage closePanelCloseUpPage={this.closePanelCloseUpPage} uri={this.props.activePanel.state.renderUris.R2}/>}                 
             </div>
         )
@@ -58,7 +58,7 @@ function DetailTitle(props) {
         <div id='detail-title'>
             <p id='detail-title-coord'>{props.activePanel.state.position.col + " - " + String.fromCharCode(64+props.activePanel.state.position.row)}</p>
             <div id='detail-title-text'>
-                <p style={{'paddingLeft':'30px','paddingRight':'30px'}}>"This is the blah blah blah actual panel title"</p>
+                <p style={{'paddingLeft':'30px','paddingRight':'30px'}}>"No Chance in Hell, My Friend!"</p>
                 <div id='detail-page-backline'/>
             </div>
         </div>
@@ -68,7 +68,7 @@ function DetailTitle(props) {
 function DetailPanel(props) {
     return(
         <div id='detail-page-panel-div' >
-            <img src={props.activePanel.state.renderUris.R2} onClick={()=>{props.openPanelCloseUpPage()}}/>
+            <img src={props.activePanel.state.renderUris.R2} onClick={()=>{props.openPanelCloseUpPage()}} alt='Currently selected panel'/>
         </div>
     );
 }
