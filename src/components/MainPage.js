@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import { Player } from '@lottiefiles/react-lottie-player';
 import title from '../img/banner.png';
 import subtitle from '../img/subheader.png';
 import PanelGrid from './PanelGrid.js';
