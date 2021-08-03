@@ -64,9 +64,9 @@ class DetailPage extends Component {
                         {/* <p>OR</p> */}
                         <div>
                             <div className="imgLayering">
-                                <img className="imgLayering" id="panel-title-img" src={titlePlacard}/>
-                                <img className="imgLayeringTop" src={titleImg}/>
-                                <img className="imgLayeringTop2" src={titleStuff}/>
+                                <img className="imgLayering" alt="title placard" id="panel-title-img" src={titlePlacard}/>
+                                <img className="imgLayeringTop" alt="title img" src={titleImg}/>
+                                <img className="imgLayeringTop2" alt="title info" src={titleStuff}/>
                             </div>
                         </div>
                         
@@ -76,15 +76,15 @@ class DetailPage extends Component {
                         </div>
                     </div>
                     <div id="panel-col">
-                        <img id="panel-frame" src={panelFrame}/>
+                        <img id="panel-frame" alt="panel frame" src={panelFrame}/>
         
                     </div>
                     <div id="stats-col">
                         <div upper-block>
                             <div className="swatch-block">
-                                <img className="swatch" src={swatchA}/>
-                                <img className="swatch" src={swatchB}/>
-                                <img className="swatch" src={swatchC}/>
+                                <img className="swatch" alt="swatch img" src={swatchA}/>
+                                <img className="swatch" alt="swatch img" src={swatchB}/>
+                                <img className="swatch" alt="swatch img" src={swatchC}/>
                             </div>
                             <div cast-roster>
                             </div>
@@ -101,24 +101,24 @@ class DetailPage extends Component {
     }
 }
 
-function DetailTitle(props) {
-    return(
-        <div id='detail-title'>
-            <p id='detail-title-coord'>{props.activePanel.state.position.col + " - " + String.fromCharCode(64+props.activePanel.state.position.row)}</p>
-            <div id='detail-title-text'>
-                <p style={{'paddingLeft':'30px','paddingRight':'30px'}}>"No Chance in Hell, My Friend!"</p>
-                <div id='detail-page-backline'/>
-            </div>
-        </div>
-    );
-}
+// function DetailTitle(props) {
+//     return(
+//         <div id='detail-title'>
+//             <p id='detail-title-coord'>{props.activePanel.state.position.col + " - " + String.fromCharCode(64+props.activePanel.state.position.row)}</p>
+//             <div id='detail-title-text'>
+//                 <p style={{'paddingLeft':'30px','paddingRight':'30px'}}>"No Chance in Hell, My Friend!"</p>
+//                 <div id='detail-page-backline'/>
+//             </div>
+//         </div>
+//     );
+// }
 
-function DetailPanel(props) {
-    return(
-        <div id='detail-page-panel-div' >
-            <img src={props.activePanel.state.renderUris.R2} onClick={()=>{props.openPanelCloseUpPage()}} alt='Currently selected panel'/>
-        </div>
-    );
-}
+// function DetailPanel(props) {
+//     return(
+//         <div id='detail-page-panel-div' >
+//             <img src={props.activePanel.state.renderUris.R2} onClick={()=>{props.openPanelCloseUpPage()}} alt='Currently selected panel'/>
+//         </div>
+//     );
+// }
 
 export default DetailPage
