@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
-import closeBoxImg from '../img/closeBox.png';
-import CloseUpPage from './CloseUpPage';
+import '../css/detail-page.css';
+import closeBoxImg from '../img/V_Switch-Active.svg';
+import titleImg from '../img/IMG-2_Subtitle.png';
+import titlePlacard from '../img/V-GROUP_Placard.svg';
+import titleStuff from '../img/V-GROUP_Static-1.svg';
+import panelFrame from '../img/V-GROUP_Panel.svg';
+import swatchA from '../img/IMG-8_Swatch-A.png';
+import swatchB from '../img/IMG-8_Swatch-B.png';
+import swatchC from '../img/IMG-8_Swatch-C.png';
+
+
+// import CloseUpPage from './CloseUpPage';
 
 class DetailPage extends Component {
     constructor(props) {
@@ -13,12 +23,12 @@ class DetailPage extends Component {
     }
 
     componentDidMount() {
-        document.getElementById('main-page-div').classList.add('blur');
+        // document.getElementById('main-page-div').classList.add('blur');
         document.getElementById('detail-page-div').classList.add('opaque');
     }
 
     componentWillUnmount() {
-        document.getElementById('main-page-div').classList.remove('blur');
+        // document.getElementById('main-page-div').classList.remove('blur');
         document.getElementById('detail-page-div').classList.remove('opaque');
     }
 
@@ -44,10 +54,48 @@ class DetailPage extends Component {
     render() {
         return(
             <div id='detail-page-div'>
-                <DetailTitle {...this.props}/>
-                <DetailPanel {...this.props} openPanelCloseUpPage={this.openPanelCloseUpPage}/>
-                <img id='detail-page-close-box' src={closeBoxImg} onClick={()=>this.props.closePanelDetail()} alt='detail page close button'></img>
-                {this.state.closeUpActive && <CloseUpPage closePanelCloseUpPage={this.closePanelCloseUpPage} uri={this.props.activePanel.state.renderUris.R2}/>}                 
+                <div id="detail-action-button-div">
+                    <img className="detail-action-button" src={closeBoxImg} onClick={()=>this.props.closePanelDetail()} alt='detail page close button'></img>
+                    <img className="detail-action-button" src={closeBoxImg} onClick={()=>this.props.closePanelDetail()} alt='detail page close button'></img>
+                </div>
+                <div id="main-content">
+                    <div id="title-col">
+                        <p id="panel-coord">2-B</p>
+                        {/* <p>OR</p> */}
+                        <div>
+                            <div className="imgLayering">
+                                <img className="imgLayering" id="panel-title-img" src={titlePlacard}/>
+                                <img className="imgLayeringTop" src={titleImg}/>
+                                <img className="imgLayeringTop2" src={titleStuff}/>
+                            </div>
+                        </div>
+                        
+                        <div id="option-buttons">
+                            <input class="option" type='checkbox' name='thing1' defaultChecked id="thing1"/><label for="thing1"></label>
+                            <input class="option" type='checkbox' name='thing2' defaultChecked id="thing2"/><label for="thing2"></label>
+                        </div>
+                    </div>
+                    <div id="panel-col">
+                        <img id="panel-frame" src={panelFrame}/>
+        
+                    </div>
+                    <div id="stats-col">
+                        <div upper-block>
+                            <div className="swatch-block">
+                                <img className="swatch" src={swatchA}/>
+                                <img className="swatch" src={swatchB}/>
+                                <img className="swatch" src={swatchC}/>
+                            </div>
+                            <div cast-roster>
+                            </div>
+                        </div>
+                        <div lower-block>
+                        </div>
+                    </div>
+                </div>
+                {/* <DetailTitle {...this.props}/>
+                <DetailPanel {...this.props} openPanelCloseUpPage={this.openPanelCloseUpPage}/> */}
+                {/* {this.state.closeUpActive && <CloseUpPage closePanelCloseUpPage={this.closePanelCloseUpPage} uri={this.props.activePanel.state.renderUris.R2}/>}                  */}
             </div>
         )
     }

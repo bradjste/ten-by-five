@@ -10,6 +10,7 @@ collections:
   - label: "Set 1"
     name: "Set 1"
     folder: "src/cms/_panels"
+    widget: "panel"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}

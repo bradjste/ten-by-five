@@ -1,7 +1,7 @@
 import {Component} from 'react';
 import MainPage from './components/MainPage';
 import DetailPage from './components/DetailPage';
-import './App.css';
+import './css/App.css';
 
 class App extends Component{
 
@@ -13,6 +13,7 @@ class App extends Component{
     }
     this.openPanelDetailPage = this.openPanelDetailPage.bind(this);
     this.closePanelDetailPage = this.closePanelDetailPage.bind(this);
+
   }
 
   openPanelDetailPage = function(panel) {
@@ -47,7 +48,7 @@ class App extends Component{
   render() {
     return (
       <div className="App">
-        <MainPage openPanelDetail={this.openPanelDetailPage}/>
+        {!this.state.detailActive && <MainPage openPanelDetail={this.openPanelDetailPage}/>}
         {this.state.detailActive && <DetailPage closePanelDetail={this.closePanelDetailPage} activePanel={this.state.activePanel}/>}   
       </div>
     )

@@ -1,0 +1,168 @@
+#detail-page-div {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(255, 255, 255);
+    z-index:20;
+}
+
+#detail-page-panel-div {
+    z-index: 5;
+}
+
+#detail-title {
+    font-size: 104pt;
+    margin-top: 10vh;
+    color: orange;
+    text-align: center;
+    z-index: 5;
+}
+
+#detail-title-coord {
+    margin-bottom: 30px;
+    margin-top: 30%; 
+}
+
+#detail-title-text {
+    padding: 0;
+    margin-bottom: 0;
+    width: 20vw;
+    height: auto;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    border-width: 2px;
+    border-color: orange;
+    border-style: solid;
+    font-size: 20pt;
+    background-color: white;
+    display: table;
+}
+
+#detail-title-text p{
+    display: inline-block;
+    word-wrap: break-word;
+    font-style: italic;
+    font-weight: bolder;
+    vertical-align: middle;
+}
+
+#detail-page-backline {
+    background-color: orange;
+    width: 100vw;
+    height: 2px;
+    position: fixed;
+    top: 70%;
+    z-index: -2;
+    margin-left: 100px;
+}
+
+#detail-page-close-box {
+    width: 4vw;
+    margin-right: 5vw;
+    margin-top: 5vh;
+    height: 4vw;
+    cursor: pointer;
+}
+
+#detail-action-button-div {
+    display: flex;
+}
+
+#option-buttons {
+    display: flex;
+    margin-left: 35%;
+    width: 50%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#main-content {
+    display: flex;
+    justify-content: center;
+}
+
+#title-col {
+    width: 260px;
+    /* background: rgba(128, 139, 240, 0.1); */
+}
+
+#title-col p {
+    color: orange;
+    font-style: normal;
+    font-weight: 100;
+    margin-bottom: 60px;
+    margin-left: 65px;
+}
+
+#panel-col {
+    width: 530px;
+    /* background: rgba(160, 240, 128, 0.1); */
+}
+
+#stats-col {
+    width: 425px;
+    text-align: left;
+    /* background: rgba(240, 128, 128, 0.1); */
+}
+
+#panel-title-img {
+    width: 260px;
+}
+
+#panel-coord {
+    font-size: 125px;
+    margin: 0;
+}
+
+#panel-frame {
+    width: 950px;
+}
+
+input[type=checkbox] {
+    display:none;
+}
+
+input[type=checkbox] + label
+{
+    background: url(../img/V_Switch-Inactive.svg);
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    display:inline-block;
+}
+
+input[type=checkbox]:checked + label
+{
+    background: url(../img/V_Switch-Active.svg);
+    height: 16px;
+    width: 16px;
+    display:inline-block;
+}
+
+.imgLayering {
+    margin-top: 15px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.imgLayeringTop {
+    width: 85%;
+    position: absolute;
+    left: 52px;
+    top: -5px;
+}
+
+.imgLayeringTop2 {
+    position: absolute;
+    left: 72px;
+    top: -37px;
+    width: 73%;
+}
+.swatch-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.swatch {
+    width: 40px;
+}

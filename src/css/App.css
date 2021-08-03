@@ -2,7 +2,6 @@
 
 .App {
   text-align: center;
-  overflow-x: hidden;
   font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -103,89 +102,6 @@
   margin-bottom: 20px;
 }
 
-#detail-page-div {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  background-color: rgba(255, 255, 255, 0.67);
-  /* background-color: rgb(228, 228, 228); */
-  position:fixed;
-  top:0;
-  z-index:20;
-  text-align: left;
-}
-
-#detail-page-panel-div img{
-  width:26vw;
-  margin-right:350px;
-  margin-top:5%;
-  height: auto;
-  width: auto;
-  outline: 2px solid orange;
-  max-height: 90vh !important;
-  cursor: pointer;
-}
-
-#detail-page-panel-div {
-  z-index: 5;
-}
-
-#detail-title {
-  font-size: 104pt;
-  margin-top: 10vh;
-  color: orange;
-  text-align: center;
-  z-index: 5;
-}
-
-#detail-title-coord {
-  margin-bottom: 30px;
-  margin-top: 30%; 
-}
-
-#detail-title-text {
-  padding: 0;
-  margin-bottom: 0;
-  width: 20vw;
-  height: auto;
-  padding-top: 2vh;
-  padding-bottom: 2vh;
-  border-width: 2px;
-  border-color: orange;
-  border-style: solid;
-  font-size: 20pt;
-  background-color: white;
-  display: table;
-}
-
-#detail-title-text p{
-  display: inline-block;
-  word-wrap: break-word;
-  font-style: italic;
-  font-weight: bolder;
-  vertical-align: middle;
-}
-
-#detail-page-backline {
-  background-color: orange;
-  width: 100vw;
-  height: 2px;
-  position: fixed;
-  top: 70%;
-  z-index: -2;
-  margin-left: 100px;
-}
-
-#detail-page-close-box {
-  width: 4vw;
-  margin-right: 5vw;
-  margin-top: 5vh;
-  height: 4vw;
-  cursor: pointer;
-}
-
 #close-up-page-div {
   text-align: center;
   z-index: 20;
@@ -202,4 +118,12 @@
   margin-top: 5vh;
   margin-bottom: 5vh;
   outline: 3px solid orange;
+}
+
+.detail-action-button {
+  width: 20px;
+  height: auto;
+  margin-left: 32.5px;
+  margin-top: 20px;
+  cursor: pointer;
 }
