@@ -2,12 +2,26 @@ import React, { Component } from 'react';
 import '../css/detail-page.css';
 import closeBoxImg from '../img/V_Switch-Active.svg';
 import titleImg from '../img/IMG-2_Subtitle.png';
+import titleSig from '../img/IMG-3_Proprieter.png';
 import titlePlacard from '../img/V-GROUP_Placard.svg';
 import titleStuff from '../img/V-GROUP_Static-1.svg';
 import panelFrame from '../img/V-GROUP_Panel.svg';
 import swatchA from '../img/IMG-8_Swatch-A.png';
 import swatchB from '../img/IMG-8_Swatch-B.png';
 import swatchC from '../img/IMG-8_Swatch-C.png';
+import swatchBox from '../img/V-8_Box.svg';
+import fig1 from '../img/V-8_Fig-1.svg';
+import fig2 from '../img/V-8_Fig-2.svg';
+import fig3 from '../img/V-8_Fig-3.svg';
+import dottedSwatchLine from '../img/V_Dotted-Segment.svg';
+import priceIcon from '../img/V_Switch-Inactive.svg';
+import assetValue from '../img/V-13_Asset-Value.svg';
+import printValue from '../img/V-12_Print-Value.svg';
+import centerFrame from '../img/V-GROUP_Ribbon.svg';
+
+
+
+
 
 
 // import CloseUpPage from './CloseUpPage';
@@ -67,12 +81,13 @@ class DetailPage extends Component {
                                 <img className="imgLayering" alt="title placard" id="panel-title-img" src={titlePlacard}/>
                                 <img className="imgLayeringTop" alt="title img" src={titleImg}/>
                                 <img className="imgLayeringTop2" alt="title info" src={titleStuff}/>
+                                <img className="imgLayeringTop3" alt="title info" src={titleSig}/>
                             </div>
                         </div>
                         
                         <div id="option-buttons">
-                            <input class="option" type='checkbox' name='thing1' defaultChecked id="thing1"/><label for="thing1"></label>
-                            <input class="option" type='checkbox' name='thing2' defaultChecked id="thing2"/><label for="thing2"></label>
+                            <input className="option" type='checkbox' name='thing1' defaultChecked id="thing1"/><label for="thing1"></label>
+                            <input className="option" type='checkbox' name='thing2' defaultChecked id="thing2"/><label for="thing2"></label>
                         </div>
                     </div>
                     <div id="panel-col">
@@ -80,16 +95,53 @@ class DetailPage extends Component {
         
                     </div>
                     <div id="stats-col">
-                        <div upper-block>
-                            <div className="swatch-block">
-                                <img className="swatch" alt="swatch img" src={swatchA}/>
-                                <img className="swatch" alt="swatch img" src={swatchB}/>
-                                <img className="swatch" alt="swatch img" src={swatchC}/>
-                            </div>
-                            <div cast-roster>
-                            </div>
+                        <div id='upper-block'>
+                            <div>
+                                <div style={{display:'flex'}}>
+                                    <div className="swatch-block" style={{paddingTop:'20px'}}>
+                                        <div style={{display:'flex',position: 'relative'}}>
+                                            <img className="swatch-fig" alt="swatch img" src={fig1}/>
+                                            <img className="swatch-box" alt="swatch img" src={swatchBox}/>
+                                            <img className="swatch" alt="swatch img" src={swatchA}/>
+                                        </div>
+                                        <div style={{display:'flex',position: 'relative'}}>
+                                            <img className="swatch-fig" alt="swatch img" src={fig2}/>
+                                            <img className="swatch-box" alt="swatch img" src={swatchBox}/>
+                                            <img className="swatch" alt="swatch img" src={swatchB}/>
+                                        </div>
+                                        <div style={{display:'flex',position: 'relative'}}>
+                                            <img className="swatch-fig" alt="swatch img" src={fig3}/>
+                                            <img className="swatch-box" alt="swatch img" src={swatchBox}/>
+                                            <img className="swatch" alt="swatch img" src={swatchC}/>
+                                            <img style={{width:'70px',position: 'relative',top:'-8px',left:'-120px'}} alt="dotted line" src={dottedSwatchLine}/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style={{position:'relative'}}>
+                                            <img style={{width:'180px',position: 'absolute',left:"-20px",top:"100px"}} alt="center frame" src={centerFrame}/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="value-block" style={{display:'flex',justifyContent:'space-between'}}>
+                                    <div className="value-block-item">
+                                        <img className="value-text" alt='asset-text' src={assetValue}/>
+                                        <div className="value-price">
+                                            <img className="price-icon" alt='asset-icon' src={priceIcon}/>
+                                            <img alt='asset-price'/>
+                                        </div>
+                                    </div>
+                                    <div className="value-block-item">
+                                    <img className="value-text" alt='print-text' src={printValue}/>
+                                        <div className="value-price">
+                                            <img className="price-icon" alt='print-icon' src={priceIcon}/>
+                                            <img alt='print-price'/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>          
                         </div>
-                        <div lower-block>
+                        <div id='lower-block'>
+
                         </div>
                     </div>
                 </div>

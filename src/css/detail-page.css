@@ -78,6 +78,7 @@
 #main-content {
     display: flex;
     justify-content: center;
+    padding: 0 50px 20px 50px;
 }
 
 #title-col {
@@ -94,7 +95,7 @@
 }
 
 #panel-col {
-    width: 530px;
+    width: 500px;
     /* background: rgba(160, 240, 128, 0.1); */
 }
 
@@ -158,11 +159,57 @@ input[type=checkbox]:checked + label
     top: -37px;
     width: 73%;
 }
+
+.imgLayeringTop3 {
+    position: absolute;
+    left: 102px;
+    top: 340px;
+    width: 175px;
+}
+
 .swatch-block {
     display: flex;
     flex-direction: column;
 }
 
 .swatch {
-    width: 40px;
+    position: absolute;
+    width: 50px;
+    left: 36px;
+    top: 5px;
+}
+
+.swatch-box {
+    width: 50px;
+    margin-bottom: 20px;
+}
+
+.swatch-fig {
+    width: 30px;
+    padding-bottom: 60px;
+    padding-right: 5px;
+}
+
+.value-block-item {
+    position: relative;
+}
+
+.price-icon {
+    width: 10px;
+}
+
+.value-text {
+    width: 150px
+}
+
+.value-price {
+    display: flex;
+    height: 60px;
+    background: rgba(255, 153, 0, 0.286);
+    justify-content: space-between;
+}
+
+#upper-block {
+    /* display: flex;
+    justify-content: space-between; */
 }
