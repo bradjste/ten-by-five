@@ -209,7 +209,3 @@ input[type=checkbox]:checked + label
     justify-content: space-between;
 }
 
-#upper-block {
-    /* display: flex;
-    justify-content: space-between; */
-}
