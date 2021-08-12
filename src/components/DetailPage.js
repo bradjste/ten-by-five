@@ -31,8 +31,8 @@ import centerTag1 from '../img/V-10_Label.svg';
 import castOuter from '../img/V-11_Icon.svg';
 import cast1 from '../img/V-11_Cast-1.svg';
 import cast2 from '../img/V-11_Cast-2.svg';
-// import cast1Hover from '../img/V-11_Cast-1-Hover.svg';
-// import cast2Hover from '../img/V-11_Cast-2-Hover.svg';
+import cast1Hover from '../img/V-11_Cast-1-Hover.svg';
+import cast2Hover from '../img/V-11_Cast-2-Hover.svg';
 import castBaby from '../img/V-11_Baby.svg';
 import fourthRenderBox from '../img/V-15_4th-R-Frame.svg';
 import fourthRenderLabel from '../img/V-15_Label.svg';
@@ -57,7 +57,9 @@ class DetailPage extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            closeUpActive: false
+            closeUpActive: false,
+            cast1Src: cast1,
+            cast2Src: cast2
         }
         this.openPanelCloseUpPage = this.openPanelCloseUpPage.bind(this);
         this.closePanelCloseUpPage = this.closePanelCloseUpPage.bind(this);
@@ -157,8 +159,12 @@ class DetailPage extends Component {
                                             <img style={{width:'20px',position: 'absolute',left:"136px",top:"197px"}} alt="wine up" src={wineUp}/>
                                             <img style={{width:'20px',position: 'absolute',left:"210px",top:"197px"}} alt="wine down" src={wineDown}/>
                                             <img style={{width:'50px',position: 'absolute',left:"10px",top:"35px"}} alt="cast outer" src={castOuter}/>
-                                            <img style={{width:'30px',position: 'absolute',left:"80px",top:"38px"}} alt="cast 1" src={cast1}/>
-                                            <img style={{width:'27px',position: 'absolute',left:"120px",top:"38px"}} alt="cast 2" src={cast2}/>
+                                            <img style={{cursor: 'pointer',width:'30px',position: 'absolute',left:"80px",top:"38px"}} alt="cast 1" src={this.state.cast1Src}
+                                                onMouseOver={() => {this.setState(()=>{return {cast1Src: cast1Hover}})}}
+                                                onMouseOut={() => {this.setState(()=>{return {cast1Src: cast1}})}}/>
+                                            <img style={{cursor: 'pointer',width:'27px',position: 'absolute',left:"120px",top:"38px"}} alt="cast 2" src={this.state.cast2Src}
+                                                onMouseOver={() => {this.setState(()=>{return {cast2Src: cast2Hover}})}}
+                                                onMouseOut={() => {this.setState(()=>{return {cast2Src: cast2}})}}/>
                                             <img style={{width:'80px',position: 'absolute',left:"160px",top:"8px"}} alt="cast baby" src={castBaby}/>
                                         </div>
                                     </div>
