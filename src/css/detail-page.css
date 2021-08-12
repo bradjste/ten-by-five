@@ -205,7 +205,10 @@ input[type=checkbox]:checked + label
 .value-price {
     display: flex;
     height: 60px;
-    background: rgba(255, 153, 0, 0.286);
     justify-content: space-between;
 }
 
+#lower-block {
+    position: relative;
+    margin-top: 25px;
+}
