@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import panelFrame from '../img/V-GROUP_Panel.svg';
 import secondRender from '../img/IMG-5_2nd-Render.png';
 import thirdRender from '../img/IMG-4_3rd-Render.png';
 
