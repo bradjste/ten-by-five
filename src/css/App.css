@@ -114,9 +114,9 @@
 }
 
 #close-up-page-div img{
-  width: 90vw;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  width: 70vw;
+  margin-top: 80px;
+  padding-bottom: 200px;
   outline: 3px solid orange;
 }
 

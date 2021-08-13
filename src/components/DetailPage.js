@@ -29,6 +29,7 @@ import wineDown from '../img/V-10_Theme-2.svg';
 import centerTag2 from '../img/V-9_Label.svg';
 import centerTag1 from '../img/V-10_Label.svg';
 import castOuter from '../img/V-11_Icon.svg';
+import castTag from '../img/V-11_Cast-Label.svg';
 import cast1 from '../img/V-11_Cast-1.svg';
 import cast2 from '../img/V-11_Cast-2.svg';
 import cast1Hover from '../img/V-11_Cast-1-Hover.svg';
@@ -40,18 +41,7 @@ import fourthRender from '../img/IMG-15_4th-Render.png';
 import ratingTag from '../img/V-16_Tag.svg';
 import rating from '../img/IMG-16_Penmanship.png';
 
-
-
-
-
-
-
-
-
-
-
-
-// import CloseUpPage from './CloseUpPage';
+import CloseUpPage from './CloseUpPage';
 
 class DetailPage extends Component {
     constructor(props) {
@@ -119,7 +109,7 @@ class DetailPage extends Component {
                             <input className="option" type='checkbox' name='thing2' defaultChecked id="thing2"/><label for="thing2"></label>
                         </div>
                     </div>
-                    <div id="panel-col">
+                    <div id="panel-col" onClick={()=>{this.setState(()=>{return{closeUpActive: true}})}}>
                         <div style={{position: 'relative'}}>
                             <img id="panel-frame" alt="panel frame" src={panelFrame}/>
                             <img style={{width:'380px',position: 'absolute',top:"15px",left:"74px",filter:"blur(0.8px)"}} alt="second render" src={secondRender}/>
@@ -166,6 +156,7 @@ class DetailPage extends Component {
                                                 onMouseOver={() => {this.setState(()=>{return {cast2Src: cast2Hover}})}}
                                                 onMouseOut={() => {this.setState(()=>{return {cast2Src: cast2}})}}/>
                                             <img style={{width:'80px',position: 'absolute',left:"160px",top:"8px"}} alt="cast baby" src={castBaby}/>
+                                            <img style={{width:'80px',position: 'absolute',left:"50px",top:"0px"}} alt="cast tag" src={castTag}/>
                                         </div>
                                     </div>
                                 </div>
@@ -190,7 +181,7 @@ class DetailPage extends Component {
                         <div id='lower-block'>
                             <img style={{width:'66px',position: 'relative',top:'135px',left:'-38px'}} alt="dotted line" src={dottedSwatchLine}/>
                             <div style={{display: "flex"}}>
-                                <img style={{marginRight: '15px'}} className="price-icon" alt='palette icon' src={priceIcon}/>
+                                <img style={{marginRight: '15px'}} className="price-icon" alt='palette icon' src={closeBoxImg}/>
                                 <img alt="pallete line" src={paletteLine}/>
                             </div>
                             <img style={{width:'195px',position: 'absolute',top:'55px',left:'27px'}} alt="fourth render box" src={fourthRenderBox}/>
@@ -204,7 +195,7 @@ class DetailPage extends Component {
                 </div>
                 {/* <DetailTitle {...this.props}/>
                 <DetailPanel {...this.props} openPanelCloseUpPage={this.openPanelCloseUpPage}/> */}
-                {/* {this.state.closeUpActive && <CloseUpPage closePanelCloseUpPage={this.closePanelCloseUpPage} uri={this.props.activePanel.state.renderUris.R2}/>}                  */}
+                {this.state.closeUpActive && <CloseUpPage closePanelCloseUpPage={this.closePanelCloseUpPage} uri={this.props.activePanel.state.renderUris.R2}/>}                 
             </div>
         )
     }
