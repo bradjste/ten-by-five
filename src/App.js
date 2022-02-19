@@ -1,7 +1,7 @@
 import {Component} from 'react';
 import MainPage from './components/MainPage';
 import DetailPage from './components/DetailPage';
-import './css/App.css';
+import './css/App.scss';
 
 class App extends Component{
 

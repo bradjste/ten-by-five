@@ -1,8 +1,18 @@
+@function between($fromValue, $toValue, $fromRatio, $toRatio) {
+
+    $ratio: calc(1vw / 1vh);
+    @debug "divider offset: #{$ratio}";
+    $amount: ($ratio - $fromRatio) / ($toRatio - $fromRatio);
+
+    @return #{$fromValue} + (#{$amount} * (#{$toValue} - #{$fromValue}));
+}
+
 #detail-page-div {
     margin-left: auto;
     margin-right: auto;
     background-color: rgb(255, 255, 255);
     z-index:20;
+    height: 100vh;
 }
 
 #detail-page-panel-div {
@@ -18,7 +28,7 @@
 }
 
 #detail-title-coord {
-    margin-bottom: 30px;
+    margin-bottom: between(20px, 50px, 16/9, 32/15);
     margin-top: 30%; 
 }
 
@@ -77,31 +87,39 @@
 
 #main-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding: 0 50px 20px 50px;
+    height: calc(100vh - 80px);
 }
 
 #title-col {
     width: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     /* background: rgba(128, 139, 240, 0.1); */
 }
 
 #title-col p {
     color: orange;
     font-style: normal;
-    font-weight: 100;
-    margin-bottom: 60px;
-    margin-left: 65px;
+    font-weight: 150;
+    letter-spacing: 5px;
+    font-family: 'brandon-grotesque';
+    margin-left: auto;
 }
 
 #panel-col {
-    width: 500px;
+    width: 700px;
     /* background: rgba(160, 240, 128, 0.1); */
 }
 
 #stats-col {
     width: 425px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     /* background: rgba(240, 128, 128, 0.1); */
 }
 
@@ -115,7 +133,7 @@
 }
 
 #panel-frame {
-    width: 950px;
+    height: 85vh;
 }
 
 input[type=checkbox] {
@@ -211,4 +229,16 @@ input[type=checkbox]:checked + label
 #lower-block {
     position: relative;
     margin-top: 25px;
+
+    @media (min-aspect-ratio: 4/3) {
+        property: between(10,20,4/3,16/9)px;
+    }
+}
+
+@media (min-aspect-ratio: 16/9) {
+
+}
+
+@media (min-aspect-ratio: 32/15) {
+
 }
