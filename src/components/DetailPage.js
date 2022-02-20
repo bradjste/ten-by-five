@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 // import * as d3 from 'd3'
 import { StyleSheet, css } from 'aphrodite';
