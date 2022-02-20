@@ -1,22 +1,23 @@
-import React, { Component } from 'react'
+/* eslint-disable react/prop-types */
+import React, { Component } from 'react';
 // import * as d3 from 'd3'
-import { StyleSheet, css } from 'aphrodite'
+import { StyleSheet, css } from 'aphrodite';
 import switchActive from '../img/V_Switch-Active.svg';
 import switchInctive from '../img/V_Switch-Inactive.svg';
 import titleCoord from '../img/Temp_V-1_Title.svg';
 import orImg from '../img/V_or.svg';
-import xImg from '../img/V_X.svg'
-import leftQuote from '../img/V-2_Placard-4.svg'
-import rightQuote from '../img/V-2_Placard-5.svg'
-import mediumImg from '../img/V-2_Placard-3.svg'
-import artistImg from '../img/V-2_Placard-2.svg'
-import titleWordsImg from '../img/Temp_V-2_Subtitle.svg'
-import menuBack from '../img/V_Menu_Home.svg'
-import menuLegend from '../img/V_Menu_Key.svg'
+import xImg from '../img/V_X.svg';
+import leftQuote from '../img/V-2_Placard-4.svg';
+import rightQuote from '../img/V-2_Placard-5.svg';
+import mediumImg from '../img/V-2_Placard-3.svg';
+import artistImg from '../img/V-2_Placard-2.svg';
+import titleWordsImg from '../img/Temp_V-2_Subtitle.svg';
+import menuBack from '../img/V_Menu_Home.svg';
+import menuLegend from '../img/V_Menu_Key.svg';
 import panelFrame from '../img/V-GROUP_Panel.svg';
 import secondRender from '../img/IMG-5_2nd-Render.png';
 import thirdRender from '../img/IMG-4_3rd-Render.png';
-import proprieterImg from '../img/V-3_Proprieter.svg'
+import proprieterImg from '../img/V-3_Proprieter.svg';
 import swatchA from '../img/IMG-8_Swatch-A.png';
 import swatchB from '../img/IMG-8_Swatch-B.png';
 import swatchC from '../img/IMG-8_Swatch-C.png';
@@ -61,7 +62,7 @@ import valueSvg2 from '../img/V-13_Value-2.svg';
 
 // const baseViewportWidth = 1900
 
-const orange = "#fbae5c"
+const orange = "#fbae5c";
 
 // const debugStyles = {
 //     'title-col': {
@@ -236,13 +237,13 @@ const aspectValues = {
         },
         left: {
             '4/3': -1,
-            '16/9': -.6,
-            '32/15': -.4
+            '16/9': -0.6,
+            '32/15': -0.4
         }
     },
     'back-line': {
         width: {
-            '4/3': 89,
+            '4/3': 90,
             '16/9': 89,
             '32/15': 89
         }
@@ -270,14 +271,14 @@ const aspectValues = {
     },
     'lower-block': {
         marginTop: {
-            '4/3': 98,
-            '16/9': 58,
-            '32/15': 56.5
+            '4/3': 24,
+            '16/9': 12,
+            '32/15': 12
         }
     },
     'palette-bar': {
         maxWidth: {
-            '4/3': 89,
+            '4/3': 93,
             '16/9': 82,
             '32/15': 82
         }
@@ -288,50 +289,64 @@ const aspectValues = {
             '16/9': 2.8,
             '32/15': 3.1
         }
+    },
+    'swatch': {
+        width: {
+            '4/3': 94,
+            '16/9': 80,
+            '32/15': 70
+        }
+    },
+    'swatch-block': {
+        height: {
+            '4/3': 63,
+            '16/9': 68,
+            '32/15': 68
+        }
     }
-}
+};
 
-const calculateStyle = (element, style, unit) => {
-    const {innerWidth, innerHeight} = window
-    const currentRatio = innerWidth/innerHeight
+const calculateStyle = (element, style) => {
+    const {innerWidth, innerHeight} = window;
+    const currentRatio = innerWidth/innerHeight;
     const aspectRatios = [{name: '4/3', value: 4/3},
         {name: '16/9', value: 16/9},
-        {name: '32/15', value: 32/15}]
-    let lowerRatio = {}
-    let higherRatio = {}
+        {name: '32/15', value: 32/15}];
+    let lowerRatio = {};
+    let higherRatio = {};
     aspectRatios.forEach((ratio,i,ratios) => {
         if (currentRatio < ratio.value && i === 0) {
-            higherRatio = lowerRatio = ratio
+            higherRatio = lowerRatio = ratio;
         } else if (currentRatio >= ratio.value) {
             if (i === ratios.length-1) {
-                higherRatio = lowerRatio = ratio
+                higherRatio = lowerRatio = ratio;
             } else if (ratios[i+1] && currentRatio < ratios[i+1].value) {
-                higherRatio = ratios[i+1]
-                lowerRatio = ratio
+                higherRatio = ratios[i+1];
+                lowerRatio = ratio;
             }
         } 
-    })
+    });
     
     if (higherRatio.name === lowerRatio.name) {
-        const value = aspectValues[element][style][higherRatio.name]
+        const value = aspectValues[element][style][higherRatio.name];
         // if (debugStyles[element][style]) {
         //     console.log(element,style,value)
         // }
-        return value
+        return value;
     }
-    const higherValue = aspectValues[element][style][higherRatio.name]
-    const lowerValue = aspectValues[element][style][lowerRatio.name]
-    const lerpValue = ((higherValue-lowerValue)/(higherRatio.value-lowerRatio.value)) * (currentRatio - lowerRatio.value) + lowerValue
+    const higherValue = aspectValues[element][style][higherRatio.name];
+    const lowerValue = aspectValues[element][style][lowerRatio.name];
+    const lerpValue = ((higherValue-lowerValue)/(higherRatio.value-lowerRatio.value)) * (currentRatio - lowerRatio.value) + lowerValue;
     // if (debugStyles[element][style]) {
     //     console.log(element,style,lerpValue)
     // }
-    return lerpValue
-}
+    return lerpValue;
+};
 
 
 class DetailPage extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             styles: {},
             update: 0, 
@@ -339,37 +354,37 @@ class DetailPage extends Component {
             showStats: true,
             showBar: true,
             stabilize: false
-        }
-        this.toggleStats = this.toggleStats.bind(this)
-        this.toggleStabilize = this.toggleStabilize.bind(this)
-        this.toggleBar = this.toggleBar.bind(this)
-        this.rootRef = React.createRef()
+        };
+        this.toggleStats = this.toggleStats.bind(this);
+        this.toggleStabilize = this.toggleStabilize.bind(this);
+        this.toggleBar = this.toggleBar.bind(this);
+        this.rootRef = React.createRef();
     }
 
     calculateAspectDelta() {
-        const {innerWidth, innerHeight} = window
-        const currentAspect = innerWidth/innerHeight
-        console.log(currentAspect)
+        const {innerWidth, innerHeight} = window;
+        const currentAspect = innerWidth/innerHeight;
+        console.log(currentAspect);
         if (currentAspect >= 4/3 && currentAspect <= 32/15) {
             return {
                 rootWidth: 1,
                 rootHeight: 1
-            }
+            };
         } else if (currentAspect < 4/3) {
             return {
                 rootWidth: (4/3) / currentAspect,
                 rootHeight: 1
-            }
+            };
         } else if (currentAspect > 32/15) {
             return {
                 rootWidth: 1,
                 rootHeight: currentAspect / (32/15)
-            }
+            };
         } 
     }
 
     calculateStyles() { 
-        const {rootWidth, rootHeight} = this.calculateAspectDelta()
+        const {rootWidth, rootHeight} = this.calculateAspectDelta();
         const styles = StyleSheet.create({
             'root': {
                 width: `${100 * rootWidth}vw`,
@@ -581,28 +596,25 @@ class DetailPage extends Component {
             },
             'swatch': {
                 outline: `solid 1px ${orange}`,
-                width: `${75}%`,
-                height: `${75}%`
+                width: `${calculateStyle('swatch','width')}%`,
             },
             'swatch-fig': {
-                width: `${40}%`,
+                width: `50%`,
                 marginBottom: 'auto',
-                paddingRight: `${11}%`
+                paddingRight: `5%`
             },
             'swatch-block': {
-                // width: '5vw'
-                height: `${300}%`,
+                width: 'fit-content',
+                height: `${calculateStyle('swatch-block','height')}%`,
                 display: 'flex', 
                 // gap: `${47/19.2}vw`,
-                paddingTop: `20px`,
             },
             'swatch-items': {
                 display: 'flex',
-                height: '100%',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                gap: `${20}%`,
-                marginRight: `${47}%`,
+                width: '20%',
+                marginRight: `15%`
             },
             'swatch-item': {
                 display:'flex',
@@ -610,23 +622,24 @@ class DetailPage extends Component {
             },
             'upper-block': {
                 width: `100%`,
-                height: `52%`,
+                height: `55%`,
                 // outline: `solid 1px lightblue`,
                 position: `relative`,
-                // visibility: this.state.showStats ? '' : 'hidden',
-                visibility: 'hidden',
-                overflow: 'hidden'
+                visibility: this.state.showStats ? '' : 'hidden',
+                //overflow: 'hidden'
             },
             'info-center-group': {
                 position: `absolute`,
-                width: `${250}%`,
-                top: `${120}%`,
-                left: `${273}%`,
+                width: `65%`,
+                top: `7%`,
+                left: `24.8%`,
+                height: '70%'
                 // transform: `translate(-50%,-50%)`
             },
             'center-frame': {
-                // top: `50%`,
-                // left: `${350/19.2}vw`,
+                top: `29.5%`,
+                left: `16%`,
+                width: '60%',
                 position: `absolute`,
                 // transform: `translate(-30%,-50%)`
             },
@@ -634,23 +647,24 @@ class DetailPage extends Component {
                 height: '100%'
             },
             'info-connect': {
-                top: `${94}%`,
-                left: `${-88}%`,
-                width: `${90}%`,
+                top: `61.5%`,
+                left: '0',
+                width: `16%`,
                 height: `1.5px`,
                 position: `absolute`,
             },
             'palette-wheel': {
-                width: `${120}%`,
+                width: `30%`,
                 position: `absolute`,
-                top: `${37}%`,
-                left: `${44}%`
+                top: `41.5%`,
+                left: `26%`
             },
             'info-themes-group': {
                 position: `absolute`,
-                width: `${250}%`,
-                top: `${-60}%`,
-                left: `${90}%`,
+                width: `25%`,
+                top: `70%`,
+                left: `59%`,
+                height: 'inherit'
                 // transform: `translate(-50%,-50%)`
             },
             'info-cast-group': {
@@ -680,16 +694,15 @@ class DetailPage extends Component {
                 flexDirection: 'column',
                 gap: '20px'
             },
-            'price-icon': {
-                width: `${16}%`
+            'price-icon-left': {
+                width: `55%`
+            },
+            'price-icon-right': {
+                width: `55%`,
+                marginLeft: 'auto'
             },
             'value-text': {
-                width: '100px',
-            },
-            'value-price': {
-                display: 'flex',
-                height: '60px',
-                justifyContent: 'space-between'
+                width: '40%',
             },
             'print-item': {
                 display: 'flex',
@@ -699,40 +712,47 @@ class DetailPage extends Component {
                 marginLeft: 'auto'
             },
             'value-block': {
-                paddingLeft: `${5}%`
+                paddingLeft: `7.5%`,
+                position: 'absolute',
+                bottom: '0',
+                display: 'flex',
+                justifyContent: 'space-between',
+                height: '22.5%'
             },
             'center-group-wrapper': {
-                position: 'relative'
+                position: 'relative',
+                width: '100%',
+                height: '100%'
             },
             'center-tag-char': {
-                width:`${9}%`,
+                width:`32%`,
                 position: 'absolute',
-                left:`${25}%`,
-                top:`${8}%`
+                left:`42%`,
+                top:`26.5%`
             },
             'center-tag-themes': {
-                width:`${12}%`,
+                width:`24%`,
                 position: 'absolute',
-                left:`${112}%`,
-                top:`${-8}%`
+                left:`76%`,
+                top: `57.8%`
             },
             'theme-bubble': {
-                width:`${70}%`,
+                width:`77%`,
                 position: 'absolute',
-                left:`${120}%`,
-                top:`${10}%`
+                left:`14%`,
+                top:`3%`
             },
             'theme-icon-1': {
-                width:`${20}%`,
+                width:`17%`,
                 position: 'absolute',
-                left:`${13}%`,
-                top:`${19}%`
+                left:`33%`,
+                top:`9%`
             },
             'theme-icon-2': {
-                width:`${2}%`,
+                width:`20%`,
                 position: 'absolute',
-                left:`${2}%`,
-                top:`${1}%`
+                left:`112%`,
+                top:`6%`
             },
             'cast-outer': {
                 width:`${50}%`,
@@ -784,48 +804,57 @@ class DetailPage extends Component {
                 height: '5%'
             },
             'palette-switch': {
-                width: `1.7%`,
+                width: `1.8%`,
                 marginRight: `3.5%`,
-                marginLeft: '3.5%',
+                marginLeft: '1.8%',
                 cursor: 'pointer',
             },
             'value-switch': {
-                width: `${12}%`,
-                transform: `translate(-${34}%, 0px)`
+                width: `4%`,
+                transform: `translate(-320%, 0px)`
+            },
+            'value-switch-right': {
+                width: `4%`,
+                transform: `translate(-180%, 0px)`
             },
             'palette-bar': {
                 width: this.state.showBar ? '' : '0',
                 margin: 'auto 0',
                 maxWidth: `${calculateStyle('palette-bar','maxWidth')}%`
             },
-            'value-row': {
-                display: 'flex',
-                justifyContent: 'space-between'
-            },
             'value-amount-wrapper': {
-                display: 'flex'
+                display: 'flex',
+                height: '27.5%'
+            },
+            'value-column': {
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                width: '50%'
             },
             'value-amount': {
                 color: orange,
                 marginTop: 'auto',
-                lineHeight: '70%',
-                fontSize: `${38/19.2}%`,
+                lineHeight: '65%',
+                fontSize: `280%`,
                 fontFamily: 'brandon-grotesque',
-                width: `${160/19.2}%`
+                letterSpacing: '.18em'
             },
             'usd': {
-                margin: 'auto 0 0 5px',
+                marginTop: 'auto',
                 width: '20px',
             },
             'no-sale': {
-                width: '50px'
+                width: '25%',
+                margin: 'auto 0'
             },
             'print-amount-wrapper': {
                 display: 'flex',
+                height: '27.5%',
                 justifyContent: 'flex-end'
             },
             'asset-value': {
-                transform: `translate(-${12/19.2}%, 0px)`,
+                transform: `translate(-10%, 0px)`,
                 display: 'flex'
             },
             'fourth-render-wrapper': {
@@ -891,36 +920,36 @@ class DetailPage extends Component {
                 overflowX: rootWidth > 1 ? '' : 'hidden',
                 overflowY: rootHeight > 1 ? '' : 'hidden'
             }
-        })
+        });
 
-        this.setState(() => ({styles}))
+        this.setState(() => ({styles}));
     }
 
     toggleStats() {
-        this.setState(({showStats}) => ({showStats: !showStats}), this.calculateStyles)
+        this.setState(({showStats}) => ({showStats: !showStats}), this.calculateStyles);
     }
 
     toggleStabilize() {
-        this.setState(({stabilize}) => ({stabilize: !stabilize}), this.calculateStyles)
+        this.setState(({stabilize}) => ({stabilize: !stabilize}), this.calculateStyles);
     }
 
     toggleBar() {
-        this.setState(({showBar}) => ({showBar: !showBar}), this.calculateStyles)
+        this.setState(({showBar}) => ({showBar: !showBar}), this.calculateStyles);
     }
 
     componentDidMount() {
-        const resizeObserver = new ResizeObserver(() => this.calculateStyles())
-        resizeObserver.observe(this.rootRef.current)
-        this.setState(() => ({resizeObserver}))
+        const resizeObserver = new ResizeObserver(() => this.calculateStyles());
+        resizeObserver.observe(this.rootRef.current);
+        this.setState(() => ({resizeObserver}));
     }
 
     render() {
-        const {styles} = this.state
-        return <div className={css(styles["root-wrap"])}>
+        const {styles} = this.state;
+        return (<div className={css(styles["root-wrap"])}>
             <div ref={this.rootRef} className={css(styles["root"])} id="detail-page-root">
                 <div className={css(styles["upper-actions"])}>
-                    <img className={css(styles["upper-action"])} src={menuBack} onClick={()=>this.props.closePanelDetail()} alt='detail page close button'/>
-                    <img className={css(styles["upper-action"])} src={menuLegend} onClick={this.toggleOutlines}/*onClick={()=>this.props.closePanelDetail()}*/ alt='detail page close button'/>
+                    <img className={css(styles["upper-action"])} src={menuBack} onClick={this.props.closePanelDetail} alt='detail page back button'/>
+                    <img className={css(styles["upper-action"])} src={menuLegend} onClick={this.toggleOutlines} alt='detail page legend button'/>
                 </div>
                 <div className={css(styles["back-line-group"])}>
                     <img className={css(styles["left-x"])} src={xImg} alt='x mark for backline'/>
@@ -995,8 +1024,8 @@ class DetailPage extends Component {
                                     <img className={css(styles['info-connect'])} alt="info connect" src={infoConnect}/>
                                     <img className={css(styles['center-frame'])} alt="center frame" src={centerFrame}/>
                                     <img className={css(styles['palette-wheel'])} alt="palette wheel" src={paletteWheel}/>
-                                    <img className={css(styles['center-tag-char'])} alt="character study box" src={centerTag1}/>
-                                    <img className={css(styles['center-tag-themes'])} alt="themes box" src={centerTag2}/>
+                                    <img className={css(styles['center-tag-char'])} alt="character study box" src={centerTag2}/>
+                                    <img className={css(styles['center-tag-themes'])} alt="themes box" src={centerTag1}/>
                                 </div>
                                 <div className={css(styles['info-themes-group'])}>
                                     <img className={css(styles['theme-bubble'])} alt="wine holder" src={bubble}/>
@@ -1012,15 +1041,9 @@ class DetailPage extends Component {
                                 <img className={css(styles['cast-baby'])} alt="cast baby" src={castBaby}/>
                             </div>
                             <div className={css(styles['value-block'])}>
-                                <div className={css(styles['value-row'])}>
+                                <div className={css(styles['value-column'])}>
                                     <img className={css(styles['value-text'])} alt='asset-text' src={valueSvg1}/>
-                                    <img className={css(styles['value-text'], styles['print-value-text'])} alt='print-text' src={cost1}/>
-                                </div>
-                                <div className={css(styles['value-row'])} style={{marginBottom: '25px'}}>
-                                    <img className={css(styles['price-icon'])} alt='asset-icon' src={valueSvg2}/>
-                                    <img className={css(styles['price-icon'])} alt='print-icon' src={cost2}/>
-                                </div>
-                                <div className={css(styles['value-row'])}>
+                                    <img className={css(styles['price-icon-left'])} alt='asset-icon' src={valueSvg2}/>
                                     <div className={css(styles['value-amount-wrapper'])}>
                                         <img className={css(styles['value-switch'])} alt='palette icon' src={switchActive}/>
                                         <div className={css(styles['asset-value'])}>
@@ -1028,8 +1051,12 @@ class DetailPage extends Component {
                                             <img className={css(styles['usd'])} alt='US dollar unit' src={usd}/>
                                         </div>
                                     </div>
+                                </div>
+                                <div className={css(styles['value-column'])}>
+                                    <img className={css(styles['value-text'], styles['print-value-text'])} alt='print-text' src={cost1}/>
+                                    <img className={css(styles['price-icon-right'])} alt='print-icon' src={cost2}/>
                                     <div className={css(styles['print-amount-wrapper'])}>
-                                        <img className={css(styles['value-switch'])} alt='palette icon' src={switchActive}/>
+                                        <img className={css(styles['value-switch-right'])} alt='palette icon' src={switchActive}/>
                                         <img className={css(styles['no-sale'])} alt='no sale' src={noSale}/>
                                     </div>
                                 </div>
@@ -1055,8 +1082,7 @@ class DetailPage extends Component {
                     </div>
                 </div>
             </div>
-        </div>
-        
+        </div>)
     }
 }
 
