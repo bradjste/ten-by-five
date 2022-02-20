@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/react-in-jsx-scope */
 import React, { Component } from 'react';
 // import * as d3 from 'd3'
 import { StyleSheet, css } from 'aphrodite';
