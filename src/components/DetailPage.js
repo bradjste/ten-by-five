@@ -416,7 +416,7 @@ const aspectValues = {
         fontSize: {
             '4/3': 250,
             '16/9': 220,
-            '32/15': 280
+            '32/15': 250
         }
     }
 };
@@ -713,7 +713,6 @@ class DetailPage extends Component {
             },
             'swatch': {
                 outline: `solid 1px ${orange}`,
-                // width: `${calculateStyle('swatch','width')}%`,
             },
             'swatch-fig': {
                 width: `24%`,
