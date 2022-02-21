@@ -44,8 +44,8 @@ import castBubble from '../img/V_Scalable_Bubble.svg';
 // import castTag from '../img/V-11_Cast-Label.svg';
 import cast1 from '../img/V-11_Cast-1.svg';
 import cast2 from '../img/V-11_Cast-2.svg';
-// import cast1Hover from '../img/V-11_Cast-1-Hover.svg';
-// import cast2Hover from '../img/V-11_Cast-2-Hover.svg';
+import cast1Hover from '../img/V-11_Cast-1-Hover.svg';
+import cast2Hover from '../img/V-11_Cast-2-Hover.svg';
 import castBaby from '../img/V-11_Baby.svg';
 import fourthRenderBox from '../img/V-15_4th-R-Frame.svg';
 import fourthRenderLabel from '../img/V-15_Label.svg';
@@ -272,16 +272,16 @@ const aspectValues = {
     },
     'lower-block': {
         marginTop: {
-            '4/3': 24,
+            '4/3': 18,
             '16/9': 12,
-            '32/15': 12
+            '32/15': 8.5
         }
     },
     'palette-bar': {
         maxWidth: {
             '4/3': 93,
             '16/9': 82,
-            '32/15': 82
+            '32/15': 85
         }
     },
     'second-render': {
@@ -304,7 +304,114 @@ const aspectValues = {
             '16/9': 68,
             '32/15': 68
         }
-    }
+    },
+    'swatch-items': {
+        marginRight: {
+            '4/3': 12.3,
+            '16/9': 6,
+            '32/15': 7
+        },
+        width: {
+            '4/3': 91,
+            '16/9': 68,
+            '32/15': 68
+        }
+    },
+    'info-center-group': {
+        height: {
+            '4/3': 43,
+            '16/9': 66,
+            '32/15': 70.5
+        },
+        top: {
+            '4/3': 19.5,
+            '16/9': 7,
+            '32/15': 7
+        },
+        width: {
+            '4/3': 73,
+            '16/9': 65,
+            '32/15': 65
+        }
+    },
+    'cast-icon-1': {
+        top: {
+            '4/3': 50,
+            '16/9': 54,
+            '32/15': 54
+        }
+    },
+    'cast-icon-2': {
+        top: {
+            '4/3': 51,
+            '16/9': 56,
+            '32/15': 57
+        }
+    },
+    'cast-baby': {
+        top: {
+            '4/3': 22.5,
+            '16/9': 13.5,
+            '32/15': 13.5
+        }
+    },
+    'upper-block': {
+        height: {
+            '4/3': 57.5,
+            '16/9': 55,
+            '32/15': 58.5
+        }
+    },
+    'info-connect': {
+        top: {
+            '4/3': 55.8,
+            '16/9': 52.5,
+            '32/15': 50.5
+        },
+        width: {
+            '4/3': 4.8,
+            '16/9': 16,
+            '32/15': 16
+        },
+        left: {
+            '4/3': 11.5,
+            '16/9': 0,
+            '32/15': 0
+        }
+    },
+    'value-amount-wrapper': {
+        height: {
+            '4/3': 18.5,
+            '16/9': 27.5,
+            '32/15': 27.5
+        }
+    },
+    'value-block': {
+        height: {
+            '4/3': 19.5,
+            '16/9': 22.5,
+            '32/15': 22.5
+        }
+    },
+    'info-cast-group': {
+        left: {
+            '4/3': 44,
+            '16/9': 35,
+            '32/15': 35
+        },
+        top: {
+            '4/3': 0,
+            '16/9': -11,
+            '32/15': -8
+        }
+    },
+    'theme-icon-1': {
+        top: {
+            '4/3': 10,
+            '16/9': 6,
+            '32/15': 6
+        }
+    },
 };
 
 const calculateStyle = (element, style) => {
@@ -354,7 +461,9 @@ class DetailPage extends Component {
             viewportScale: 1, 
             showStats: true,
             showBar: true,
-            stabilize: false
+            stabilize: false,
+            cast1Src: cast1,
+            cast2Src: cast2
         };
         this.toggleStats = this.toggleStats.bind(this);
         this.toggleStabilize = this.toggleStabilize.bind(this);
@@ -597,15 +706,15 @@ class DetailPage extends Component {
             },
             'swatch': {
                 outline: `solid 1px ${orange}`,
-                width: `${calculateStyle('swatch','width')}%`,
+                // width: `${calculateStyle('swatch','width')}%`,
             },
             'swatch-fig': {
-                width: `50%`,
+                width: `24%`,
                 marginBottom: 'auto',
                 paddingRight: `5%`
             },
             'swatch-block': {
-                width: 'fit-content',
+                width: '35%',
                 height: `${calculateStyle('swatch-block','height')}%`,
                 display: 'flex', 
                 // gap: `${47/19.2}vw`,
@@ -614,16 +723,17 @@ class DetailPage extends Component {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                width: '20%',
-                marginRight: `15%`
+                width: `${calculateStyle('swatch-items','width')}%`,
+                // marginRight: `${calculateStyle('swatch-items','marginRight')}%`,
             },
             'swatch-item': {
                 display:'flex',
-                position: 'relative'
+                position: 'relative',
+                height: '22%'
             },
             'upper-block': {
                 width: `100%`,
-                height: `55%`,
+                height: `${calculateStyle('upper-block','height')}%`,
                 // outline: `solid 1px lightblue`,
                 position: `relative`,
                 visibility: this.state.showStats ? '' : 'hidden',
@@ -631,10 +741,10 @@ class DetailPage extends Component {
             },
             'info-center-group': {
                 position: `absolute`,
-                width: `65%`,
-                top: `7%`,
+                width: `${calculateStyle('info-center-group','width')}%`,
+                top: `${calculateStyle('info-center-group','top')}%`,
                 left: `24.8%`,
-                height: '70%'
+                height: `${calculateStyle('info-center-group','height')}%`,
                 // transform: `translate(-50%,-50%)`
             },
             'center-frame': {
@@ -645,14 +755,15 @@ class DetailPage extends Component {
                 // transform: `translate(-30%,-50%)`
             },
             'swatch-bracket': {
-                height: '100%'
+                height: '100%',
             },
             'info-connect': {
-                top: `61.5%`,
-                left: '0',
-                width: `16%`,
-                height: `1.5px`,
+                top: `${calculateStyle('info-connect','top')}%`,
+                left: `${calculateStyle('info-connect','left')}%`,
+                width: `${calculateStyle('info-connect','width')}%`,
+                height: `17.5%`,
                 position: `absolute`,
+                // display: 'none'
             },
             'palette-wheel': {
                 width: `30%`,
@@ -662,18 +773,24 @@ class DetailPage extends Component {
             },
             'info-themes-group': {
                 position: `absolute`,
-                width: `25%`,
-                top: `70%`,
+                width: `28%`,
+                top: `74%`,
                 left: `59%`,
                 height: 'inherit'
                 // transform: `translate(-50%,-50%)`
             },
             'info-cast-group': {
                 position: `absolute`,
-                width: `${250}%`,
-                top: `${20}%`,
-                left: `${390}%`,
+                top: `${calculateStyle('info-cast-group','top')}%`,
+                left: `${calculateStyle('info-cast-group','left')}%`,
+                width: `28%`,
+                height: 'inherit'
                 // transform: `translate(-50%,-50%)`
+            },
+            'cast-group-wrap': {
+                position: 'relative',
+                height: '50%',
+                width: '90%'
             },
             'lower-block': {
                 width: `100%`,
@@ -703,7 +820,7 @@ class DetailPage extends Component {
                 marginLeft: 'auto'
             },
             'value-text': {
-                width: '40%',
+                width: '42%'
             },
             'print-item': {
                 display: 'flex',
@@ -718,7 +835,12 @@ class DetailPage extends Component {
                 bottom: '0',
                 display: 'flex',
                 justifyContent: 'space-between',
-                height: '22.5%'
+                height: `${calculateStyle('value-block','height')}%`,
+                width: '-webkit-fill-available',
+                // eslint-disable-next-line
+                width: '-moz-available',
+                // eslint-disable-next-line
+                width: 'fill-available',
             },
             'center-group-wrapper': {
                 position: 'relative',
@@ -732,67 +854,62 @@ class DetailPage extends Component {
                 top:`26.5%`
             },
             'center-tag-themes': {
-                width:`24%`,
+                width:`28%`,
                 position: 'absolute',
                 left:`76%`,
-                top: `57.8%`
+                top: `59.8%`
             },
             'theme-bubble': {
                 width:`77%`,
                 position: 'absolute',
-                left:`14%`,
-                top:`3%`
+                left:`14%`
             },
             'theme-icon-1': {
                 width:`17%`,
                 position: 'absolute',
                 left:`33%`,
-                top:`9%`
+                top: `${calculateStyle('theme-icon-1','top')}%`
             },
             'theme-icon-2': {
-                width:`20%`,
+                width:`17%`,
                 position: 'absolute',
                 left:`112%`,
-                top:`6%`
+                top: `${calculateStyle('theme-icon-1','top')}%`
             },
             'cast-outer': {
-                width:`${50}%`,
+                width:`55%`,
                 position: 'absolute',
-                left:`${10}%`,
-                top:`${35}%`
+                left:`5%`,
+                top:`43.5%`
             },
             'cast-bubble': {
-                width:`${170}%`,
+                width:`115%`,
                 position: 'absolute',
-                left:`${60}%`,
-                top:`${22}%`
+                left:`60%`,
+                top:`41%`
             },
             'cast-icon-1': {
                 cursor: "pointer",
-                width:`${30}%`,
+                width:`25%`,
                 position: 'absolute',
-                left:`${80}%`,
-                top:`${38}%`
+                left:`72%`,
+                top: `${calculateStyle('cast-icon-1','top')}%`
             },
             'cast-icon-2': {
                 cursor: "pointer",
-                width:`${27}%`,
+                width:`21%`,
                 position: 'absolute',
-                left:`${120}%`,
-                top:`${38}%`
+                left:`110%`,
+                top: `${calculateStyle('cast-icon-2','top')}%`
             },
             'cast-baby': {
-                width:`${80}%`,
+                width:`80%`,
                 position: 'absolute',
-                left:`${160}%`,
-                top:`${11}%`
+                left:`144%`,
+                top: `${calculateStyle('cast-baby','top')}%`,
+                background: 'white'
             },
-            'cast-tag': {
-                width:`${80}%`,
-                position: 'absolute',
-                left:`${50}%`,
-                top:`${0}%`
-            },
+            // 'cast-tag': {
             // 'dotted-swatch-line': {
             //     width:'66px',
             //     position: 'relative',
@@ -825,7 +942,7 @@ class DetailPage extends Component {
             },
             'value-amount-wrapper': {
                 display: 'flex',
-                height: '27.5%'
+                height: `${calculateStyle('value-amount-wrapper','height')}%`
             },
             'value-column': {
                 display: 'flex',
@@ -1035,11 +1152,17 @@ class DetailPage extends Component {
                                 </div>
                             </div>
                             <div className={css(styles['info-cast-group'])}>
-                                <img className={css(styles['cast-outer'])} alt="cast outer" src={castOuter}/>
-                                <img className={css(styles['cast-bubble'])} alt="cast bubble" src={castBubble}/>
-                                <img className={css(styles['cast-icon-1'])} alt="cast 1" src={cast1}/>
-                                <img className={css(styles['cast-icon-2'])} alt="cast 2" src={cast2}/>
-                                <img className={css(styles['cast-baby'])} alt="cast baby" src={castBaby}/>
+                                <div className={css(styles['cast-group-wrap'])}>
+                                    <img className={css(styles['cast-outer'])} alt="cast outer" src={castOuter}/>
+                                    <img className={css(styles['cast-bubble'])} alt="cast bubble" src={castBubble}/>
+                                    <img className={css(styles['cast-icon-1'])} alt="cast 1" src={this.state.cast1Src}
+                                        onMouseOver={() => {this.setState(()=>{return {cast1Src: cast1Hover}})}}
+                                        onMouseOut={() => {this.setState(()=>{return {cast1Src: cast1}})}}/>
+                                    <img className={css(styles['cast-icon-2'])} alt="cast 2" src={this.state.cast2Src}
+                                        onMouseOver={() => {this.setState(()=>{return {cast2Src: cast2Hover}})}}
+                                        onMouseOut={() => {this.setState(()=>{return {cast2Src: cast2}})}}/>
+                                    <img className={css(styles['cast-baby'])} alt="cast baby" src={castBaby}/>
+                                </div>
                             </div>
                             <div className={css(styles['value-block'])}>
                                 <div className={css(styles['value-column'])}>
