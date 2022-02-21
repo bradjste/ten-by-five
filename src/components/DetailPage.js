@@ -412,6 +412,13 @@ const aspectValues = {
             '32/15': 6
         }
     },
+    'value-amount': {
+        fontSize: {
+            '4/3': 250,
+            '16/9': 220,
+            '32/15': 280
+        }
+    }
 };
 
 const calculateStyle = (element, style) => {
@@ -954,7 +961,7 @@ class DetailPage extends Component {
                 color: orange,
                 marginTop: 'auto',
                 lineHeight: '65%',
-                fontSize: `280%`,
+                fontSize: `${calculateStyle('value-amount','fontSize')}%`,
                 fontFamily: 'brandon-grotesque',
                 letterSpacing: '.18em'
             },
