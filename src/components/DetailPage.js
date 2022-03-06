@@ -863,7 +863,7 @@ class DetailPage extends Component {
                 width:`28%`,
                 position: 'absolute',
                 left:`76%`,
-                top: `59.8%`
+                top: `56.8%`
             },
             'theme-bubble': {
                 width:`77%`,
@@ -962,6 +962,7 @@ class DetailPage extends Component {
                 lineHeight: '65%',
                 fontSize: `${calculateStyle('value-amount','fontSize')}%`,
                 fontFamily: 'brandon-grotesque',
+                fontWeight: 100,
                 letterSpacing: '.18em'
             },
             'usd': {
