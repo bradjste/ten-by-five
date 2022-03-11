@@ -26,12 +26,24 @@ import swatchC from '../img/IMG-8_Swatch-C.png';
 import fig1 from '../img/V-8_Fig-1.svg';
 import fig2 from '../img/V-8_Fig-2.svg';
 import fig3 from '../img/V-8_Fig-3.svg';
+import fig1_1 from '../img/_V-8_Fig-1_(1pt).svg';
+import fig2_1 from '../img/_V-8_Fig-1_(1pt).svg';
+import fig3_1 from '../img/_V-8_Fig-1_(1pt).svg';
+import fig1_12 from '../img/_V-8_Fig-1_(1pt).svg';
+import fig2_12 from '../img/_V-8_Fig-1_(1pt).svg';
+import fig3_12 from '../img/_V-8_Fig-1_(1pt).svg';
+import fig1_15 from '../img/_V-8_Fig-1_(1pt).svg';
+import fig2_15 from '../img/_V-8_Fig-1_(1pt).svg';
+import fig3_15 from '../img/_V-8_Fig-1_(1pt).svg';
 import dottedSwatchLine from '../img/V_Dotted-Segment.svg';
 // import priceIcon from '../img/V_Switch-Inactive.svg';
 // import assetValue from '../img/V-13_Asset-Value.svg';
 // import printValue from '../img/V-12_Print-Value.svg';
 import centerFrame from '../img/V-GROUP_Ribbon.svg';
 import swatchBracket from '../img/V-8_Swatches-2.svg';
+import swatchBracket_1 from '../img/_V-8_Swatches-2_(1pt).svg';
+import swatchBracket_12 from '../img/_V-8_Swatches-2_(1.2pt).svg';
+import swatchBracket_15 from '../img/_V-8_Swatches-2_(1.5pt).svg';
 import paletteWheel from '../img/V-9_Subject-Ratio.svg';
 import paletteLine from '../img/V-14_Color-Bar.svg';
 import bubble from '../img/V-10_Bubble.svg';
@@ -47,7 +59,10 @@ import cast2 from '../img/V-11_Cast-2.svg';
 import cast1Hover from '../img/V-11_Cast-1-Hover.svg';
 import cast2Hover from '../img/V-11_Cast-2-Hover.svg';
 import castBaby from '../img/V-11_Baby.svg';
-import fourthRenderBox from '../img/V-15_4th-R-Frame.svg';
+import fourthRenderBox from '../img/V-15_4th-R.svg';
+import fourthRenderBox_1 from '../img/_V-15_4th-R_(1pt).svg';
+import fourthRenderBox_12 from '../img/_V-15_4th-R_(1.2pt).svg';
+import fourthRenderBox_15 from '../img/_V-15_4th-R_(1.5pt).svg';
 import fourthRenderLabel from '../img/V-15_Label.svg';
 import fourthRender from '../img/IMG-15_4th-Render.png';
 import ratingTag from '../img/V-16_Tag.svg';
@@ -188,7 +203,7 @@ const aspectValues = {
         left: {
             '4/3': 52.9,
             '16/9': 39.3,
-            '32/15': 33.2
+            '32/15': 33.3
         },
         top: {
             '4/3': 25,
@@ -1069,6 +1084,40 @@ class DetailPage extends Component {
     }
 
     render() {
+        const {row, col} = this.props.activePanel.props
+        const temp = {}
+        if (row === 1 && [1,2,3].includes(col)) {
+            if (col === 1) {
+                temp.swatchBracket = swatchBracket_1
+                temp.fourthRenderBox = fourthRenderBox_1
+                temp.fig1 = fig1_1
+                temp.fig2 = fig2_1
+                temp.fig3 = fig3_1
+                console.log(row, col, temp)
+            } else if (col === 2) {
+                console.log(row, col)
+                temp.swatchBracket = swatchBracket_12
+                temp.fourthRenderBox = fourthRenderBox_12
+                temp.fig1 = fig1_12
+                temp.fig2 = fig2_12
+                temp.fig3 = fig3_12
+                console.log(row, col, temp)
+            } else if (col === 3) {
+                temp.swatchBracket = swatchBracket_15
+                temp.fourthRenderBox = fourthRenderBox_15
+                temp.fig1 = fig1_15
+                temp.fig2 = fig2_15
+                temp.fig3 = fig3_15
+                console.log(row, col, temp)
+            }
+        } else {
+            temp.swatchBracket = swatchBracket
+            temp.fourthRenderBox = fourthRenderBox
+            temp.fig1 = fig1
+            temp.fig2 = fig2
+            temp.fig3 = fig3
+        }
+
         const {styles} = this.state;
         return (<div className={css(styles["root-wrap"])}>
             <div ref={this.rootRef} className={css(styles["root"])} id="detail-page-root">
@@ -1081,7 +1130,6 @@ class DetailPage extends Component {
                     <div className={css(styles["back-line"])}/>   
                 </div>
                 <div className={css(styles['title-col'])}>
-                    {/* <div className={css(styles['title-section'])}> */}
                         <img className={css(styles['title-coord'])} src={titleCoord} alt="panel coordinate"/>
                         <img className={css(styles['title-or'])} src={orImg} alt=""/>
                         <div className={css(styles['title-box'])}>
@@ -1114,10 +1162,6 @@ class DetailPage extends Component {
                         <div className={css(styles['proprieter-wrapper'])}>
                             <img className={css(styles['proprieter-box'])} alt="" src={proprieterImg}/>
                         </div>
-                    {/* </div> */}
-                    {/* <div className={css(styles['lower-title'])}> */}
-                        
-                    {/* </div> */}
                 </div>
                 <div className={css(styles['panel-col'])}>
                     <img className={css(styles['panel-frame'])} src={panelFrame} alt=""/>
@@ -1130,19 +1174,19 @@ class DetailPage extends Component {
                             <div className={css(styles['swatch-block'])}>
                                 <div className={css(styles['swatch-items'])}>
                                     <div className={css(styles['swatch-item'])}>
-                                        <img className={css(styles['swatch-fig'])} alt="swatch img" src={fig1}/>
+                                        <img className={css(styles['swatch-fig'])} alt="swatch img" src={temp.fig1}/>
                                         <img className={css(styles['swatch'])} src={swatchA} alt=""/>
                                     </div>
                                     <div className={css(styles['swatch-item'])}>
-                                        <img className={css(styles['swatch-fig'])} alt="swatch img" src={fig2}/>
+                                        <img className={css(styles['swatch-fig'])} alt="swatch img" src={temp.fig2}/>
                                         <img className={css(styles['swatch'])} src={swatchB} alt=""/>
                                     </div>
                                     <div className={css(styles['swatch-item'])}>
-                                        <img className={css(styles['swatch-fig'])} alt="swatch img" src={fig3}/>
+                                        <img className={css(styles['swatch-fig'])} alt="swatch img" src={temp.fig3}/>
                                         <img className={css(styles['swatch'])} src={swatchC} alt=""/>
                                     </div>
                                 </div>
-                                <img className={css(styles['swatch-bracket'])} alt="swatch grouping" src={swatchBracket}/>
+                                <img className={css(styles['swatch-bracket'])} alt="swatch grouping" src={temp.swatchBracket}/>
                             </div>
                             <div className={css(styles['info-center-group'])}>
                                 <div className={css(styles['center-group-wrapper'])}>
@@ -1200,7 +1244,7 @@ class DetailPage extends Component {
                             </div>
                             <div className={css(styles['fourth-render-wrapper'])}>
                                 <img className={css(styles['dotted-swatch-line'])} alt="dotted line" src={dottedSwatchLine}/>
-                                <img className={css(styles['fourth-render-frame'])} alt="fourth render box" src={fourthRenderBox}/>
+                                <img className={css(styles['fourth-render-frame'])} alt="fourth render box" src={temp.fourthRenderBox}/>
                                 <img className={css(styles['fourth-render'])} alt="fourth render" src={fourthRender}/>
                                 <img className={css(styles['fourth-render-tag'])} alt="fourth render tag" src={fourthRenderLabel}/>
                                 <img className={css(styles['fourth-render-line'])} alt="dotted line" src={dottedSwatchLine}/>
