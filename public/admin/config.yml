@@ -11,6 +11,7 @@ collections:
     name: "Set 1"
     folder: "src/cms/_panels"
     widget: "panel"
+    format: json
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}

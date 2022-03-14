@@ -54,11 +54,11 @@ import centerTag1 from '../img/V-10_Label.svg';
 import castOuter from '../img/V-11_Icon.svg';
 import castBubble from '../img/V_Scalable_Bubble.svg';
 // import castTag from '../img/V-11_Cast-Label.svg';
-import cast1 from '../img/V-11_Cast-1.svg';
-import cast2 from '../img/V-11_Cast-2.svg';
+import cast1 from '../img/V-11_Cast_Char-1.svg';
+import cast2 from '../img/V-11_Cast_Char-2.svg';
 import cast1Hover from '../img/V-11_Cast-1-Hover.svg';
 import cast2Hover from '../img/V-11_Cast-2-Hover.svg';
-import castBaby from '../img/V-11_Baby.svg';
+import castBaby from '../img/V-11_Cast_Baby-1.svg';
 import fourthRenderBox from '../img/V-15_4th-R.svg';
 import fourthRenderBox_1 from '../img/_V-15_4th-R_(1pt).svg';
 import fourthRenderBox_12 from '../img/_V-15_4th-R_(1.2pt).svg';
@@ -926,9 +926,8 @@ class DetailPage extends Component {
             'cast-baby': {
                 width:`80%`,
                 position: 'absolute',
-                left:`144%`,
-                top: `${calculateStyle('cast-baby','top')}%`,
-                background: 'white'
+                left:`140%`,
+                top: `${calculateStyle('cast-baby','top')}%`
             },
             // 'cast-tag': {
             // 'dotted-swatch-line': {
