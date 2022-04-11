@@ -76,6 +76,8 @@ import usd from '../img/V-13_usd.svg';
 import valueSvg1 from '../img/V-13_Value-1.svg';
 import valueSvg2 from '../img/V-13_Value-2.svg';
 
+import adjustOverlay from '../img/PP-Guide-900.png'
+
 // const baseViewportWidth = 1900
 
 const orange = "#fbae5c";
@@ -438,7 +440,7 @@ const aspectValues = {
 
 const calculateStyle = (element, style) => {
     const {innerWidth, innerHeight} = window;
-    const currentRatio = innerWidth/innerHeight;
+    const currentRatio = Math.max(1.6, innerWidth/innerHeight);
     const aspectRatios = [{name: '4/3', value: 4/3},
         {name: '16/9', value: 16/9},
         {name: '32/15', value: 32/15}];
@@ -496,15 +498,14 @@ class DetailPage extends Component {
     calculateAspectDelta() {
         const {innerWidth, innerHeight} = window;
         const currentAspect = innerWidth/innerHeight;
-        console.log(currentAspect);
-        if (currentAspect >= 4/3 && currentAspect <= 32/15) {
+        if (currentAspect > 1.6 && currentAspect <= 32/15) {
             return {
                 rootWidth: 1,
                 rootHeight: 1
             };
-        } else if (currentAspect < 4/3) {
+        } else if (currentAspect <= 1.6) {
             return {
-                rootWidth: (4/3) / currentAspect,
+                rootWidth: (1.6) / currentAspect,
                 rootHeight: 1
             };
         } else if (currentAspect > 32/15) {
@@ -1120,6 +1121,7 @@ class DetailPage extends Component {
         const {styles} = this.state;
         return (<div className={css(styles["root-wrap"])}>
             <div ref={this.rootRef} className={css(styles["root"])} id="detail-page-root">
+                {false && <img src={adjustOverlay} alt='overlay'/>}
                 <div className={css(styles["upper-actions"])}>
                     <img className={css(styles["upper-action"])} src={menuBack} onClick={this.props.closePanelDetail} alt='detail page back button'/>
                     <img className={css(styles["upper-action"])} src={menuLegend} onClick={this.toggleOutlines} alt='detail page legend button'/>
