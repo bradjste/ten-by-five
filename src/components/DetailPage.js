@@ -76,7 +76,7 @@ import usd from '../img/V-13_usd.svg';
 import valueSvg1 from '../img/V-13_Value-1.svg';
 import valueSvg2 from '../img/V-13_Value-2.svg';
 
-import adjustOverlay from '../img/PP-Guide-900.png'
+import adjustOverlay from '../img/PP-Guide-1080.png'
 
 // const baseViewportWidth = 1900
 
@@ -92,13 +92,13 @@ const aspectValues = {
     'title-col': {
         bottom: {
             '4/3': 14.93,
-            '16/9': 9.14,
-            '32/15': 7.77
+            '16/9': 11.55,
+            '32/15': 9.7
         },
         height: {
             '4/3': 57,
-            '16/9': 69.07,
-            '32/15': 80
+            '16/9': 67.3,
+            '32/15': 77
         },
         left: {
             '4/3': 5.83,
@@ -250,13 +250,13 @@ const aspectValues = {
     'back-line-group': {
         top: {
             '4/3': 59.3,
-            '16/9': 56.3,
-            '32/15': 59.3
+            '16/9': 55.2,
+            '32/15': 58.1
         },
         left: {
             '4/3': -1,
-            '16/9': -0.6,
-            '32/15': -0.4
+            '16/9': -0.9,
+            '32/15': -0.89
         }
     },
     'back-line': {
@@ -529,13 +529,17 @@ class DetailPage extends Component {
             'upper-actions': {
                 display: 'flex',
                 position: 'absolute',
-                top: `2%`,
-                left: `2%`,
-                width: `3.6%`,
+                top: `3%`,
+                left: `2.05%`,
+                width: `4.3%`,
                 justifyContent: 'space-between'
             },
-            'upper-action' : {
-                width: `32%`, 
+            'upper-action-back': {
+                width: `26%`, 
+                cursor: 'pointer'
+            },
+            'upper-action-legend': {
+                width: `35.5%`, 
                 cursor: 'pointer'
             },
             'left-x': {
@@ -566,8 +570,7 @@ class DetailPage extends Component {
                 background: this.state.stabilize ? 'rgba(255,0,0,.1)' : 'none',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between',
-                gap: `4.86%`,
+                justifyContent: 'space-between'
             },
             'panel-col': {
                 outline: this.state.stabilize ? '1px solid pink' : '',
@@ -590,19 +593,19 @@ class DetailPage extends Component {
                 background: this.state.stabilize ? 'rgba(0,0,255,.1)' : 'none'
             },
             'title-coord': {
-                width: '90%',
+                width: '88.5%',
                 marginLeft: 'auto',
                 marginRight: 'auto',
                 marginTop: this.state.showStats ? '' : `${calculateStyle('title-coord','marginTop')}%`
             },
             'title-or': {
-                width: `11%`,
+                width: `10%`,
                 alignSelf: 'center',
                 display: this.state.showStats ? '' : 'none'
             },
             'title-words-wrap': {
                 outline: this.state.stabilize ? '1px solid pink' : '',
-                height: '55%',
+                height: '53.5%',
                 display: 'flex',
                 justifyContent: 'center',
                 flexDirection: 'column'
@@ -631,7 +634,7 @@ class DetailPage extends Component {
                 display: 'flex',
                 outline: this.state.stabilize ? '1px solid pink' : '',
                 justifyContent: 'space-between',
-                width: '90%',
+                width: '91.4%',
                 margin: '0 auto'
             },
             'left-quote': {
@@ -640,12 +643,12 @@ class DetailPage extends Component {
                 alignSelf: 'flex-start',
             },
             'right-quote': {
-                width: `5%`,
-                paddingBottom: '3%',
+                width: `4.5%`,
+                paddingBottom: '4.38%',
                 alignSelf: 'flex-end'
             },
             'title-words': {
-                width: '80%'
+                width: '79.8%'
             },
             'panel-label': {
                 outline: this.state.stabilize ? '1px solid pink' : '',
@@ -653,19 +656,20 @@ class DetailPage extends Component {
                 flexDirection: 'column',
                 gap: `${30 / 9}%`,
                 alignSelf: 'flex-end',
-                width: '80%',
+                width: '81%',
                 marginLeft: 'auto',
                 flexGrow: '1',
-                justifyContent: 'inherit'
-
+                justifyContent: 'inherit',
+                paddingTop: '3%'
             },
             'label-artist': {
-                marginRight: `${10}%`,
+                marginRight: `13%`,
+                marginLeft: '3%',
                 outline: this.state.stabilize ? '1px solid pink' : '',
             },
             'label-medium': {
-                marginRight: `${10}%`,
-                marginBottom: `${10}%`,
+                marginRight: `13%`,
+                marginBottom: `12%`,
                 outline: this.state.stabilize ? '1px solid pink' : '',
             },
             'second-render': {
@@ -686,28 +690,30 @@ class DetailPage extends Component {
                 outline: this.state.stabilize ? '1px solid pink' : '',
                 display: 'flex',
                 justifyContent: 'space-between',
-                width: '100%',
+                width: '98.5%',
                 marginBottom: this.state.showStats ? '' : `${calculateStyle('title-options','marginBottom')}%`,
+                transform: 'translate(0, 100%)'
             },
             'stats-option': {
                 display: 'flex',
-                outline: this.state.stabilize ? '1px solid pink' : ''
+                outline: this.state.stabilize ? '1px solid pink' : '',
+                gap: '41%'
             },
             'stabilize-option': {
                 display: 'flex',
                 outline: this.state.stabilize ? '1px solid pink' : '',
-                justifyContent: 'flex-end'
+                justifyContent: 'flex-end',
+                gap: '28%'
             },
             'option-box': {
-                width: `9%`,
-                cursor: 'pointer',
-                marginRight: '15%'
+                width: `${.65 * rootWidth}vw`,
+                cursor: 'pointer'
             },
             'title-option-text': {
                 color: orange,
-                fontSize: `75%`,
+                fontSize: `74%`,
                 fontFamily: 'brandon-grotesque',
-                letterSpacing: '.081vw',
+                letterSpacing: '.087vw',
                 margin: 'auto 0'
             },
             'panel-wrapper': {
@@ -724,8 +730,9 @@ class DetailPage extends Component {
                 visibility: this.state.showStats ? 'visible' : 'hidden'
             },
             'proprieter-box': {
-                width: '85%',
+                width: '87%',
                 marginLeft: 'auto',
+                transform: 'translate(0, 25%)'
             },
             'swatch': {
                 outline: `solid 1px ${orange}`,
@@ -1059,6 +1066,9 @@ class DetailPage extends Component {
                 height: '100vh',
                 overflowX: rootWidth > 1 ? '' : 'hidden',
                 overflowY: rootHeight > 1 ? '' : 'hidden'
+            },
+            'overlay': {
+                zIndex: 1000
             }
         });
 
@@ -1093,7 +1103,6 @@ class DetailPage extends Component {
                 temp.fig1 = fig1_1
                 temp.fig2 = fig2_1
                 temp.fig3 = fig3_1
-                console.log(row, col, temp)
             } else if (col === 2) {
                 console.log(row, col)
                 temp.swatchBracket = swatchBracket_12
@@ -1101,14 +1110,12 @@ class DetailPage extends Component {
                 temp.fig1 = fig1_12
                 temp.fig2 = fig2_12
                 temp.fig3 = fig3_12
-                console.log(row, col, temp)
             } else if (col === 3) {
                 temp.swatchBracket = swatchBracket_15
                 temp.fourthRenderBox = fourthRenderBox_15
                 temp.fig1 = fig1_15
                 temp.fig2 = fig2_15
                 temp.fig3 = fig3_15
-                console.log(row, col, temp)
             }
         } else {
             temp.swatchBracket = swatchBracket
@@ -1121,10 +1128,10 @@ class DetailPage extends Component {
         const {styles} = this.state;
         return (<div className={css(styles["root-wrap"])}>
             <div ref={this.rootRef} className={css(styles["root"])} id="detail-page-root">
-                {false && <img src={adjustOverlay} alt='overlay'/>}
+                {!true && <img className={css(styles["overlay"])} src={adjustOverlay} alt='overlay'/>}
                 <div className={css(styles["upper-actions"])}>
-                    <img className={css(styles["upper-action"])} src={menuBack} onClick={this.props.closePanelDetail} alt='detail page back button'/>
-                    <img className={css(styles["upper-action"])} src={menuLegend} onClick={this.toggleOutlines} alt='detail page legend button'/>
+                    <img className={css(styles["upper-action-back"])} src={menuBack} onClick={this.props.closePanelDetail} alt='detail page back button'/>
+                    <img className={css(styles["upper-action-legend"])} src={menuLegend} onClick={this.toggleOutlines} alt='detail page legend button'/>
                 </div>
                 <div className={css(styles["back-line-group"])}>
                     <img className={css(styles["left-x"])} src={xImg} alt='x mark for backline'/>
