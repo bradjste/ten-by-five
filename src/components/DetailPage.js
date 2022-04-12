@@ -76,7 +76,7 @@ import usd from '../img/V-13_usd.svg';
 import valueSvg1 from '../img/V-13_Value-1.svg';
 import valueSvg2 from '../img/V-13_Value-2.svg';
 
-import adjustOverlay from '../img/PP-Guide-1080.png'
+import adjustOverlay from '../img/PP-Guide-900.png'
 
 // const baseViewportWidth = 1900
 
@@ -110,17 +110,17 @@ const aspectValues = {
         top: {
             '4/3': 10.21,
             '16/9': 7,
-            '32/15': 4
+            '32/15': 3.8
         },
         left: {
             '4/3': 23.22,
-            '16/9': 26.98,
-            '32/15': 28.49
+            '16/9': 26.9,
+            '32/15': 28.4
         },
         width: {
             '4/3': 37.4,
-            '16/9': 29.9,
-            '32/15': 26.93
+            '16/9': 30.05,
+            '32/15': 27.03
         },
         height: {
             '4/3': 79,
@@ -304,8 +304,8 @@ const aspectValues = {
     'second-render': {
         top: {
             '4/3': 2.5,
-            '16/9': 2.8,
-            '32/15': 3.1
+            '16/9': 2.6,
+            '32/15': 2.8
         }
     },
     'swatch': {
