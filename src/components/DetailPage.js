@@ -132,7 +132,7 @@ const aspectValues = {
         top: {
             '4/3': 8,
             '16/9': 9.63,
-            '32/15': 4
+            '32/15': 4.95
         },
         width: {
             '4/3': 33,
@@ -147,7 +147,7 @@ const aspectValues = {
         height: {
             '4/3': 84,
             '16/9': 82,
-            '32/15': 92
+            '32/15': 90.5
         }
     },
     'dotted-swatch-line': {
@@ -355,14 +355,14 @@ const aspectValues = {
         top: {
             '4/3': 50,
             '16/9': 54,
-            '32/15': 54
+            '32/15': 51
         }
     },
     'cast-icon-2': {
         top: {
             '4/3': 51,
             '16/9': 56,
-            '32/15': 57
+            '32/15': 53
         }
     },
     'cast-baby': {
@@ -419,7 +419,7 @@ const aspectValues = {
         top: {
             '4/3': 0,
             '16/9': -11,
-            '32/15': -8
+            '32/15': -10.4
         }
     },
     'theme-icon-1': {
@@ -906,29 +906,29 @@ class DetailPage extends Component {
                 top: `${calculateStyle('theme-icon-1','top')}%`
             },
             'cast-outer': {
-                width:`55%`,
+                width:`52%`,
                 position: 'absolute',
-                left:`5%`,
-                top:`43.5%`
+                left:`3.85%`,
+                top:`45.4%`
             },
             'cast-bubble': {
-                width:`115%`,
+                width:`133.5%`,
                 position: 'absolute',
-                left:`60%`,
-                top:`41%`
+                left:`68%`,
+                top:`35%`
             },
             'cast-icon-1': {
                 cursor: "pointer",
                 width:`25%`,
                 position: 'absolute',
-                left:`72%`,
+                left:`79%`,
                 top: `${calculateStyle('cast-icon-1','top')}%`
             },
             'cast-icon-2': {
                 cursor: "pointer",
                 width:`21%`,
                 position: 'absolute',
-                left:`110%`,
+                left:`112%`,
                 top: `${calculateStyle('cast-icon-2','top')}%`
             },
             'cast-baby': {
@@ -1128,7 +1128,7 @@ class DetailPage extends Component {
         const {styles} = this.state;
         return (<div className={css(styles["root-wrap"])}>
             <div ref={this.rootRef} className={css(styles["root"])} id="detail-page-root">
-                {!true && <img className={css(styles["overlay"])} src={adjustOverlay} alt='overlay'/>}
+                {true && <img className={css(styles["overlay"])} src={adjustOverlay} alt='overlay'/>}
                 <div className={css(styles["upper-actions"])}>
                     <img className={css(styles["upper-action-back"])} src={menuBack} onClick={this.props.closePanelDetail} alt='detail page back button'/>
                     <img className={css(styles["upper-action-legend"])} src={menuLegend} onClick={this.toggleOutlines} alt='detail page legend button'/>

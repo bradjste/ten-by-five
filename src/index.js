@@ -3,10 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import netlifyIdentity from 'netlify-identity-widget';
-
-
-netlifyIdentity.init();
 
 ReactDOM.render(
   <React.StrictMode>

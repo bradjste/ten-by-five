@@ -1,17 +1,18 @@
 backend:
   name: git-gateway
 
-local_backend: true
-
-media_folder: "src/cms/images"
-public_folder: "src/cms"
+media_folder: "public/images"
+public_folder: "/images"
 
 collections:
-  - label: "Set 1"
-    name: "Set 1"
-    folder: "src/cms/_panels"
-    widget: "panel"
-    format: json
-    fields:
+  - name: "panels" # Used in routes, e.g., /admin/collections/blog
+    label: "Panels" # Used in the UI
+    folder: "panels" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "1st Render", name: "render1", widget: "image"}
+      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
