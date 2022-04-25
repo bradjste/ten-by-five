@@ -1128,7 +1128,7 @@ class DetailPage extends Component {
         const {styles} = this.state;
         return (<div className={css(styles["root-wrap"])}>
             <div ref={this.rootRef} className={css(styles["root"])} id="detail-page-root">
-                {true && <img className={css(styles["overlay"])} src={adjustOverlay} alt='overlay'/>}
+                {false && <img className={css(styles["overlay"])} src={adjustOverlay} alt='overlay'/>}
                 <div className={css(styles["upper-actions"])}>
                     <img className={css(styles["upper-action-back"])} src={menuBack} onClick={this.props.closePanelDetail} alt='detail page back button'/>
                     <img className={css(styles["upper-action-legend"])} src={menuLegend} onClick={this.toggleOutlines} alt='detail page legend button'/>
