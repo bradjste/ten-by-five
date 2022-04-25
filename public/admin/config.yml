@@ -15,4 +15,4 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "1st Render", name: "render1", widget: "image"}
-      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
+      - {label: "Rating", name: "rating", widget: "Select", options: ["A+", 'A', 'A-', 'B+', 'B', 'B-']}
