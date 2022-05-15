@@ -3,8 +3,8 @@
 import React, { Component } from 'react';
 // import * as d3 from 'd3'
 import { StyleSheet, css } from 'aphrodite';
-import switchActive from '../img/V_Switch-Active.svg';
-import switchInctive from '../img/V_Switch-Inactive.svg';
+import switchActive from '../img/V_Switch_Active.svg';
+import switchInctive from '../img/V_Switch_Inactive.svg';
 import titleCoord from '../img/Temp_V-1_Title.svg';
 import orImg from '../img/V_or.svg';
 import xImg from '../img/V_X.svg';
@@ -15,7 +15,7 @@ import artistImg from '../img/V-2_Placard-2.svg';
 import titleWordsImg from '../img/Temp_V-2_Subtitle.svg';
 import menuBack from '../img/V_Menu_Home.svg';
 import menuLegend from '../img/V_Menu_Key.svg';
-import panelFrame from '../img/V-GROUP_Panel.svg';
+import panelFrame from '../img/V-7_Frame_BB.svg';
 import secondRender from '../img/IMG-5_2nd-Render.png';
 import thirdRender from '../img/IMG-4_3rd-Render.png';
 import proprieterImg from '../img/V-3_Proprieter.svg';
@@ -26,32 +26,33 @@ import swatchC from '../img/IMG-8_Swatch-C.png';
 import fig1 from '../img/V-8_Fig-1.svg';
 import fig2 from '../img/V-8_Fig-2.svg';
 import fig3 from '../img/V-8_Fig-3.svg';
-import fig1_1 from '../img/_V-8_Fig-1_(1pt).svg';
-import fig2_1 from '../img/_V-8_Fig-1_(1pt).svg';
-import fig3_1 from '../img/_V-8_Fig-1_(1pt).svg';
-import fig1_12 from '../img/_V-8_Fig-1_(1pt).svg';
-import fig2_12 from '../img/_V-8_Fig-1_(1pt).svg';
-import fig3_12 from '../img/_V-8_Fig-1_(1pt).svg';
-import fig1_15 from '../img/_V-8_Fig-1_(1pt).svg';
-import fig2_15 from '../img/_V-8_Fig-1_(1pt).svg';
-import fig3_15 from '../img/_V-8_Fig-1_(1pt).svg';
-import dottedSwatchLine from '../img/V_Dotted-Segment.svg';
+import fig1_1 from '../img/V-8_Fig-1.svg';
+import fig2_1 from '../img/V-8_Fig-1.svg';
+import fig3_1 from '../img/V-8_Fig-1.svg';
+import fig1_12 from '../img/V-8_Fig-1.svg';
+import fig2_12 from '../img/V-8_Fig-1.svg';
+import fig3_12 from '../img/V-8_Fig-1.svg';
+import fig1_15 from '../img/V-8_Fig-1.svg';
+import fig2_15 from '../img/V-8_Fig-1.svg';
+import fig3_15 from '../img/V-8_Fig-1.svg';
+// import dottedSwatchLine from '../img/V_Dotted-Segment.svg';
 // import priceIcon from '../img/V_Switch-Inactive.svg';
 // import assetValue from '../img/V-13_Asset-Value.svg';
 // import printValue from '../img/V-12_Print-Value.svg';
-import centerFrame from '../img/V-GROUP_Ribbon.svg';
+import centerFrame from '../img/V-9_Ribbon.svg';
 import swatchBracket from '../img/V-8_Swatches-2.svg';
-import swatchBracket_1 from '../img/_V-8_Swatches-2_(1pt).svg';
-import swatchBracket_12 from '../img/_V-8_Swatches-2_(1.2pt).svg';
-import swatchBracket_15 from '../img/_V-8_Swatches-2_(1.5pt).svg';
-import paletteWheel from '../img/V-9_Subject-Ratio.svg';
-import paletteLine from '../img/V-14_Color-Bar.svg';
-import bubble from '../img/V-10_Bubble.svg';
-import wineUp from '../img/V-10_Theme-1.svg';
-import wineDown from '../img/V-10_Theme-2.svg';
-import centerTag2 from '../img/V-9_Label.svg';
-import centerTag1 from '../img/V-10_Label.svg';
-import castOuter from '../img/V-11_Icon.svg';
+import swatchBracket_1 from '../img/V-8_Swatches-2.svg';
+import swatchBracket_12 from '../img/V-8_Swatches-2.svg';
+import swatchBracket_15 from '../img/V-8_Swatches-2.svg';
+import paletteWheel from '../img/Temp_V-9_Pie.svg';
+import paletteLine from '../img/Temp_V-14_Bar.svg';
+import bubble from '../img/V-10_Themes-1.svg';
+import wineUp from '../img/V-10_Symbol-1.svg';
+import wineDown from '../img/V-10_Symbol-3.svg';
+// import themesPlus from '../img/V-10_Themes-2.svg'
+import centerTag2 from '../img/V_Scalable_Tag-2.svg';
+import centerTag1 from '../img/V_Scalable_Tag-2.svg';
+import castOuter from '../img/V-11_Cast.svg';
 import castBubble from '../img/V_Scalable_Bubble.svg';
 // import castTag from '../img/V-11_Cast-Label.svg';
 import cast1 from '../img/V-11_Cast_Char-1.svg';
@@ -60,20 +61,17 @@ import cast1Hover from '../img/V-11_Cast-1-Hover.svg';
 import cast2Hover from '../img/V-11_Cast-2-Hover.svg';
 import castBaby from '../img/V-11_Cast_Baby-1.svg';
 import fourthRenderBox from '../img/V-15_4th-R.svg';
-import fourthRenderBox_1 from '../img/_V-15_4th-R_(1pt).svg';
-import fourthRenderBox_12 from '../img/_V-15_4th-R_(1.2pt).svg';
-import fourthRenderBox_15 from '../img/_V-15_4th-R_(1.5pt).svg';
-import fourthRenderLabel from '../img/V-15_Label.svg';
+import fourthRenderBox_1 from '../img/V-15_4th-R.svg';
+import fourthRenderBox_12 from '../img/V-15_4th-R.svg';
+import fourthRenderBox_15 from '../img/V-15_4th-R.svg';
+import fourthRenderLabel from '../img/V_Scalable_Tag-2.svg';
 import fourthRender from '../img/IMG-15_4th-Render.png';
 import ratingTag from '../img/V-16_Tag.svg';
 import rating from '../img/Temp_V-16_Grade.svg';
 import infoConnect from '../img/V_Connect_S.svg';
 
-import cost1 from '../img/V-12_Cost-1.svg';
 import cost2 from '../img/V-12_Cost-2.svg';
-import noSale from '../img/V-12_no-sale.svg';
 import usd from '../img/V-13_usd.svg';
-import valueSvg1 from '../img/V-13_Value-1.svg';
 import valueSvg2 from '../img/V-13_Value-2.svg';
 
 import adjustOverlay from '../img/PP-Guide-900.png'
@@ -110,17 +108,17 @@ const aspectValues = {
         top: {
             '4/3': 10.21,
             '16/9': 7,
-            '32/15': 3.8
+            '32/15': 4.3
         },
         left: {
             '4/3': 23.22,
             '16/9': 26.9,
-            '32/15': 28.4
+            '32/15': 27.4
         },
         width: {
             '4/3': 37.4,
             '16/9': 30.05,
-            '32/15': 27.03
+            '32/15': 29.03
         },
         height: {
             '4/3': 79,
@@ -166,7 +164,7 @@ const aspectValues = {
         width: {
             '4/3': 50,
             '16/9': 35.5,
-            '32/15': 33.4
+            '32/15': 35
         },
         left: {
             '4/3': 3,
@@ -176,7 +174,7 @@ const aspectValues = {
         top: {
             '4/3': 16,
             '16/9': 16,
-            '32/15': 12
+            '32/15': 11
         }
     },
     'fourth-render': {
@@ -188,24 +186,24 @@ const aspectValues = {
         left: {
             '4/3': 5.5,
             '16/9': 5.8,
-            '32/15': 1.8
+            '32/15': 2.5
         },
         top: {
             '4/3': 20,
             '16/9': 20,
-            '32/15': 16
+            '32/15': 18
         }
     },
     'fourth-render-tag': {
         width: {
             '4/3': 25,
             '16/9': 18,
-            '32/15': 18
+            '32/15': 15
         },
         left: {
             '4/3': 52.9,
             '16/9': 39.3,
-            '32/15': 33.3
+            '32/15': 38.2
         },
         top: {
             '4/3': 25,
@@ -234,17 +232,17 @@ const aspectValues = {
         width: {
             '4/3': 19,
             '16/9': 15,
-            '32/15': 17
+            '32/15': 17.3
         },
         left: {
             '4/3': 68,
             '16/9': 50,
-            '32/15': 43
+            '32/15': 45.55
         },
         top: {
             '4/3': 53.8,
             '16/9': 55.8,
-            '32/15': 52.2
+            '32/15': 53
         }
     },
     'back-line-group': {
@@ -291,21 +289,21 @@ const aspectValues = {
         marginTop: {
             '4/3': 18,
             '16/9': 12,
-            '32/15': 8.5
+            '32/15': 6.7
         }
     },
     'palette-bar': {
         maxWidth: {
             '4/3': 93,
             '16/9': 82,
-            '32/15': 85
+            '32/15': 82
         }
     },
     'second-render': {
         top: {
             '4/3': 2.5,
             '16/9': 2.6,
-            '32/15': 2.8
+            '32/15': 2.2
         }
     },
     'swatch': {
@@ -319,7 +317,7 @@ const aspectValues = {
         height: {
             '4/3': 63,
             '16/9': 68,
-            '32/15': 68
+            '32/15': 65
         }
     },
     'swatch-items': {
@@ -330,8 +328,8 @@ const aspectValues = {
         },
         width: {
             '4/3': 91,
-            '16/9': 68,
-            '32/15': 68
+            '16/9': 67,
+            '32/15': 66.7
         }
     },
     'info-center-group': {
@@ -407,7 +405,7 @@ const aspectValues = {
         height: {
             '4/3': 19.5,
             '16/9': 22.5,
-            '32/15': 22.5
+            '32/15': 20
         }
     },
     'info-cast-group': {
@@ -426,7 +424,7 @@ const aspectValues = {
         top: {
             '4/3': 10,
             '16/9': 6,
-            '32/15': 6
+            '32/15': 8
         }
     },
     'value-amount': {
@@ -529,7 +527,7 @@ class DetailPage extends Component {
             'upper-actions': {
                 display: 'flex',
                 position: 'absolute',
-                top: `3%`,
+                top: `3.5%`,
                 left: `2.05%`,
                 width: `4.3%`,
                 justifyContent: 'space-between'
@@ -674,16 +672,16 @@ class DetailPage extends Component {
             },
             'second-render': {
                 position: 'absolute',
-                left: '2.4%',
+                left: '5.5%',
                 top: `${calculateStyle('second-render','top')}%`,
-                width: '95.4%',
+                width: '88.9%',
                 filter: this.state.showBar ? 'blur(1px) opacity(0.15)' : ''
             },
             'third-render': {
                 position: 'absolute',
-                left: '2.4%',
+                left: '5.5%',
                 top: `${calculateStyle('second-render','top')}%`,
-                width: '95.4%',
+                width: '88.9%',
                 visibility: this.state.showBar ? '' : 'hidden'
             },
             'title-options': {
@@ -735,12 +733,14 @@ class DetailPage extends Component {
                 transform: 'translate(0, 25%)'
             },
             'swatch': {
+                width: `${3.73 * rootWidth}vw`,
+                height: `${3.73 * rootWidth}vw`,
                 outline: `solid 1px ${orange}`,
             },
             'swatch-fig': {
-                width: `24%`,
+                width: `19%`,
                 marginBottom: 'auto',
-                paddingRight: `5%`
+                paddingRight: `12%`
             },
             'swatch-block': {
                 width: '35%',
@@ -758,7 +758,7 @@ class DetailPage extends Component {
             'swatch-item': {
                 display:'flex',
                 position: 'relative',
-                height: '22%'
+                height: '23%'
             },
             'upper-block': {
                 width: `100%`,
@@ -777,9 +777,9 @@ class DetailPage extends Component {
                 // transform: `translate(-50%,-50%)`
             },
             'center-frame': {
-                top: `29.5%`,
-                left: `16%`,
-                width: '60%',
+                top: `28.5%`,
+                left: `18%`,
+                width: '64.3%',
                 position: `absolute`,
                 // transform: `translate(-30%,-50%)`
             },
@@ -795,16 +795,16 @@ class DetailPage extends Component {
                 // display: 'none'
             },
             'palette-wheel': {
-                width: `30%`,
+                width: `26.5%`,
                 position: `absolute`,
-                top: `41.5%`,
-                left: `26%`
+                top: `40.5%`,
+                left: `30%`
             },
             'info-themes-group': {
                 position: `absolute`,
                 width: `28%`,
-                top: `74%`,
-                left: `59%`,
+                top: `70%`,
+                left: `60.2%`,
                 height: 'inherit'
                 // transform: `translate(-50%,-50%)`
             },
@@ -842,26 +842,31 @@ class DetailPage extends Component {
                 gap: '20px'
             },
             'price-icon-left': {
-                width: `55%`
+                width: `56%`
             },
             'price-icon-right': {
-                width: `55%`,
+                width: `56%`,
                 marginLeft: 'auto'
             },
             'value-text': {
-                width: '42%'
+                width: 'fit-content',
+                fontFamily: 'brandon-grotesque',
+                letterSpacing: '.25em',
+                color: orange,
+                fontWeight: '300'
             },
             'print-item': {
                 display: 'flex',
                 flexDirection: 'column'
             },
             'print-value-text': {
-                marginLeft: 'auto'
+                marginLeft: 'auto',
+                transform: 'translateX(3%)'
             },
             'value-block': {
-                paddingLeft: `7.5%`,
+                paddingLeft: `9%`,
                 position: 'absolute',
-                bottom: '0',
+                bottom: '4.5%',
                 display: 'flex',
                 justifyContent: 'space-between',
                 height: `${calculateStyle('value-block','height')}%`,
@@ -870,6 +875,7 @@ class DetailPage extends Component {
                 width: '-moz-available',
                 // eslint-disable-next-line
                 width: 'fill-available',
+                left: '-12px'
             },
             'center-group-wrapper': {
                 position: 'relative',
@@ -877,39 +883,41 @@ class DetailPage extends Component {
                 height: '100%'
             },
             'center-tag-char': {
-                width:`32%`,
+                width:`33.1%`,
+                height: '6.9%',
                 position: 'absolute',
-                left:`42%`,
-                top:`26.5%`
+                left:`45.4%`,
+                top:`25.5%`,
+                transform: 'scaleX(1.35)'
             },
             'center-tag-themes': {
-                width:`28%`,
+                width:`23.9%`,
                 position: 'absolute',
-                left:`76%`,
-                top: `56.8%`
+                left:`83.3%`,
+                top: `55.3%`
             },
             'theme-bubble': {
-                width:`77%`,
+                width:`63%`,
                 position: 'absolute',
                 left:`14%`
             },
             'theme-icon-1': {
-                width:`17%`,
+                width:`17.8%`,
                 position: 'absolute',
-                left:`33%`,
+                left:`37%`,
                 top: `${calculateStyle('theme-icon-1','top')}%`
             },
             'theme-icon-2': {
-                width:`17%`,
+                width:`17.9%`,
                 position: 'absolute',
-                left:`112%`,
+                left:`126.2%`,
                 top: `${calculateStyle('theme-icon-1','top')}%`
             },
             'cast-outer': {
-                width:`52%`,
+                width:`23%`,
                 position: 'absolute',
-                left:`3.85%`,
-                top:`45.4%`
+                left:`3.3%`,
+                top:`44.4%`
             },
             'cast-bubble': {
                 width:`133.5%`,
@@ -951,8 +959,8 @@ class DetailPage extends Component {
             },
             'palette-switch': {
                 width: `1.8%`,
-                marginRight: `3.5%`,
-                marginLeft: '1.8%',
+                marginRight: `3.2%`,
+                marginLeft: '2.3%',
                 cursor: 'pointer',
             },
             'value-switch': {
@@ -970,7 +978,8 @@ class DetailPage extends Component {
             },
             'value-amount-wrapper': {
                 display: 'flex',
-                height: `${calculateStyle('value-amount-wrapper','height')}%`
+                height: `${calculateStyle('value-amount-wrapper','height')}%`,
+                transform: 'translate(2%, 35%)'
             },
             'value-column': {
                 display: 'flex',
@@ -992,13 +1001,17 @@ class DetailPage extends Component {
                 width: '20px',
             },
             'no-sale': {
-                width: '25%',
-                margin: 'auto 0'
+                color: orange,
+                margin: 'auto 0',
+                fontFamily: 'brandon-grotesque',
+                letterSpacing: '0.25em',
+                transform: 'translateX(-3%)'
             },
             'print-amount-wrapper': {
                 display: 'flex',
                 height: '27.5%',
-                justifyContent: 'flex-end'
+                justifyContent: 'flex-end',
+                transform: 'translate(2%, 36%)'
             },
             'asset-value': {
                 transform: `translate(-10%, 0px)`,
@@ -1030,6 +1043,7 @@ class DetailPage extends Component {
             }, 
             'fourth-render-tag': {
                 position: 'absolute',
+                transform: 'scaleX(1.45)',
                 width: `${calculateStyle('fourth-render-tag','width')}%`,
                 left: `${calculateStyle('fourth-render-tag','left')}%`,
                 top: `${calculateStyle('fourth-render-tag','top')}%`
@@ -1128,7 +1142,7 @@ class DetailPage extends Component {
         const {styles} = this.state;
         return (<div className={css(styles["root-wrap"])}>
             <div ref={this.rootRef} className={css(styles["root"])} id="detail-page-root">
-                {false && <img className={css(styles["overlay"])} src={adjustOverlay} alt='overlay'/>}
+                {true && <img className={css(styles["overlay"])} src={adjustOverlay} alt='overlay'/>}
                 <div className={css(styles["upper-actions"])}>
                     <img className={css(styles["upper-action-back"])} src={menuBack} onClick={this.props.closePanelDetail} alt='detail page back button'/>
                     <img className={css(styles["upper-action-legend"])} src={menuLegend} onClick={this.toggleOutlines} alt='detail page legend button'/>
@@ -1225,7 +1239,8 @@ class DetailPage extends Component {
                             </div>
                             <div className={css(styles['value-block'])}>
                                 <div className={css(styles['value-column'])}>
-                                    <img className={css(styles['value-text'])} alt='asset-text' src={valueSvg1}/>
+                                    {/* <img  alt='asset-text' src={valueSvg1}/> */}
+                                    <div className={css(styles['value-text'])}>ASSET VALUE</div>
                                     <img className={css(styles['price-icon-left'])} alt='asset-icon' src={valueSvg2}/>
                                     <div className={css(styles['value-amount-wrapper'])}>
                                         <img className={css(styles['value-switch'])} alt='palette icon' src={switchActive}/>
@@ -1236,11 +1251,13 @@ class DetailPage extends Component {
                                     </div>
                                 </div>
                                 <div className={css(styles['value-column'])}>
-                                    <img className={css(styles['value-text'], styles['print-value-text'])} alt='print-text' src={cost1}/>
+                                    {/* <img className={css(styles['value-text'], styles['print-value-text'])} alt='print-text' src={cost1}/> */}
+                                    <div className={css(styles['value-text'], styles['print-value-text'])}>PRINT COST</div>
                                     <img className={css(styles['price-icon-right'])} alt='print-icon' src={cost2}/>
                                     <div className={css(styles['print-amount-wrapper'])}>
                                         <img className={css(styles['value-switch-right'])} alt='palette icon' src={switchActive}/>
-                                        <img className={css(styles['no-sale'])} alt='no sale' src={noSale}/>
+                                        {/* <img className={css(styles['no-sale'])} alt='no sale' src={noSale}/> */}
+                                        <div className={css(styles['no-sale'])}>NO SALE</div>
                                     </div>
                                 </div>
                             </div> 
@@ -1251,11 +1268,11 @@ class DetailPage extends Component {
                                 <img  className={css(styles['palette-bar'])} alt="palette line" src={paletteLine}/>
                             </div>
                             <div className={css(styles['fourth-render-wrapper'])}>
-                                <img className={css(styles['dotted-swatch-line'])} alt="dotted line" src={dottedSwatchLine}/>
+                                {/* <img className={css(styles['dotted-swatch-line'])} alt="dotted line" src={dottedSwatchLine}/> */}
                                 <img className={css(styles['fourth-render-frame'])} alt="fourth render box" src={temp.fourthRenderBox}/>
                                 <img className={css(styles['fourth-render'])} alt="fourth render" src={fourthRender}/>
                                 <img className={css(styles['fourth-render-tag'])} alt="fourth render tag" src={fourthRenderLabel}/>
-                                <img className={css(styles['fourth-render-line'])} alt="dotted line" src={dottedSwatchLine}/>
+                                {/* <img className={css(styles['fourth-render-line'])} alt="dotted line" src={dottedSwatchLine}/> */}
                                 <div className={css(styles['rating-group'])}>
                                     <img className={css(styles['rating-tag'])} alt="rating box" src={ratingTag}/>
                                     <img className={css(styles['rating-icon'])} alt="rating icon" src={rating}/>
