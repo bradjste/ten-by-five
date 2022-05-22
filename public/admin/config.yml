@@ -6,7 +6,7 @@ media_folder: "src/img/renders"
 collections:
   - name: "panels" # Used in routes, e.g., /admin/collections/blog
     label: "Panel" # Used in the UI
-    folder: "src/panels" # The path to the folder where the documents are stored
+    folder: "src/cms" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     extension: json
