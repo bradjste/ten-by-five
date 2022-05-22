@@ -2,7 +2,6 @@ backend:
   name: git-gateway
 
 media_folder: "public/images"
-public_folder: "images"
 
 collections:
   - name: "panels" # Used in routes, e.g., /admin/collections/blog
