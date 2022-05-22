@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-console.log(require.context('../panels', false, /\.(png|jpe?g|svg)$/))
+// console.log(require.context('../panels', false, /\.(png|jpe?g|svg)$/))
 
 ReactDOM.render(
   <React.StrictMode>
