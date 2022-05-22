@@ -2,12 +2,12 @@ backend:
   name: git-gateway
 
 media_folder: "public/images"
-public_folder: "src/cms"
+public_folder: "images"
 
 collections:
   - name: "panels" # Used in routes, e.g., /admin/collections/blog
     label: "Panel" # Used in the UI
-    folder: "src/panels" # The path to the folder where the documents are stored
+    folder: "public/panels" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     extension: json
