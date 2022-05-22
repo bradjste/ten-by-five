@@ -7,7 +7,7 @@ class PanelGrid extends Component {
         function importAll(r) {
             return r.keys().map(r);
         }
-        const images = importAll(require.context('../cms/images', false, /\.(png|jpe?g|svg)$/));
+        const images = importAll(require.context('../img/tempPanels', false, /\.(png|jpe?g|svg)$/));
         const panels = [];
 
         for (let r = 1; r < 6; r++) {
