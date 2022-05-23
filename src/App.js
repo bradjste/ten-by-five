@@ -8,13 +8,12 @@ class App extends Component{
   constructor(props) {
     super(props);
 
-    const images = this.importAll(require.context('./img/cms', false, /\.(png|jpe?g|svg)$/))
+    // const images = this.importAll(require.context('./img/cms', false, /\.(png|jpe?g|svg)$/))
     const panels = this.importAll(require.context('./cms/', false, /\.(json)$/))
 
     this.state = {
       detailActive: false,
       activePanel: null,
-      images,
       panels
     }
 
