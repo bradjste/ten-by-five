@@ -16,4 +16,6 @@ collections:
       - {label: "Row", name: "row", widget: "number"}
       - {label: "Column", name: "column", widget: "number"}
       - {label: "1st Render", name: "render1", widget: "image"}
+      - {label: "2nd Render", name: "render2", widget: "image"}
+      - {label: "3rd Render", name: "render3", widget: "image"}
       - {label: "Rating", name: "rating", widget: "select", options: ["A+", "A", "A-", "B+", "B", "B-"]}
