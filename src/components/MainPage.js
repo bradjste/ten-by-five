@@ -14,7 +14,7 @@ class MainPage extends Component {
                 <img src={title} alt='title graphic' className='main-banner'/>
                 <br />
                 <img src={subtitle} alt='subtitle graphic' className='main-subheader'></img>
-                <PanelGrid openPanelDetail={this.props.openPanelDetail}/>
+                <PanelGrid openPanelDetail={this.props.openPanelDetail} panels={this.props.panels}/>
                 <About />
                 {/* <div style={{'display':'flex','flexDirection':'row','paddingLeft':'0px'}}>
                     {numbers.map((number) =>

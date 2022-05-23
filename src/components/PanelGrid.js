@@ -3,13 +3,16 @@ import Panel from './Panel';
 
 class PanelGrid extends Component {
 
-    render() {
-        function importAll(r) {
-            return r.keys().map(r);
-        }
-        const images = importAll(require.context('../img/tempPanels', false, /\.(png|jpe?g|svg)$/));
-        const panels = [];
+    getRender(r, c, render) {
+        const panel =  this.props.panels
+            .filter(({row}) => row === r)
+            .find(({column}) => column === c)
 
+        return panel ? panel[`render${render}`] : null
+    }
+
+    render() {
+        const panels = []
         for (let r = 1; r < 6; r++) {
             for (let c = 1; c < 11; c++) {
                 panels.push(
@@ -17,10 +20,9 @@ class PanelGrid extends Component {
                         key={'panel-' + r + '-' + c} 
                         col={c} 
                         row={r} 
-                        render={1}
-                        images={images}
-                    ></Panel>);
-            
+                        render1={this.getRender(r, c, 1)}
+                        render2={this.getRender(r, c, 2)}
+                    ></Panel>);   
             }
         }
 

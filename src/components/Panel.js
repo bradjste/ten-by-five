@@ -9,16 +9,9 @@ class Panel extends Component {
                 row: props.row,
                 col: props.col
             },
-            closeUpActive: false,
-            render: this.props.render,
-            renderUris: this.getUris()
+            closeUpActive: false
         }
-        this.loadMarkdown();
         this.setActive = this.setActive.bind(this);
-    }
-
-    loadMarkdown() {
-
     }
 
     getUris() {
@@ -59,12 +52,12 @@ class Panel extends Component {
                 <img 
                     className='panel-thumbnail' 
                     alt={"Panel (" + this.props.row + "," + this.props.col + ")"} 
-                    src={this.state.renderUris.R1 ? this.state.renderUris.R1 : '11'}/>
+                    src={this.props.render1 ? this.props.render1 : '11'}/>
                 
                 <img 
                     className='panel-thumbnail-preview' 
                     alt={"Panel (" + this.props.row + "," + this.props.col + ")"} 
-                    src={this.state.renderUris.R2 ? this.state.renderUris.R2 : '11'}/>            
+                    src={this.props.render2 ? this.props.render2 : '11'}/>            
             </div>
         )
     }
