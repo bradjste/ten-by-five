@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
 
-media_folder: "src/img/cms"
+media_folder: "public/img/cms"
 
 collections:
   - name: "panels" # Used in routes, e.g., /admin/collections/blog
