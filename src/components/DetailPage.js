@@ -941,7 +941,9 @@ class DetailPage extends Component {
                 justifyContent: 'space-between',
                 height: `${calculateStyle('value-block','height')}%`,
                 width: '-moz-available',
+                // eslint-disable-next-line
                 width: '-webkit-fill-available',
+                // eslint-disable-next-line
                 width: 'fill-available',
                 left: '-12px'
             },
