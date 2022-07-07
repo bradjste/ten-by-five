@@ -648,7 +648,7 @@ class DetailPage extends Component {
                 alignItems: 'center',
                 display: 'flex',
                 background: this.state.stabilize ? 'rgba(0,255,0,.1)' : 'none',
-                transform: `rotate3d(${this.state.mouseXPercent ?? 0}, ${this.state.mouseYPercent ?? 0}, 0, ${-90 + 180 * this.state.mouseXPercent}deg)`
+                // transform: `rotate3d(${this.state.mouseXPercent ?? 0}, ${this.state.mouseYPercent ?? 0}, 0, ${-90 + 180 * this.state.mouseXPercent}deg)`
             },
             'info-col': {
                 outline: this.state.stabilize ? '1px solid pink' : '',
@@ -1226,7 +1226,7 @@ class DetailPage extends Component {
         return (
         <div onMouseMove={onMouseMove} className={css(styles["root-wrap"])}>
             <div ref={this.rootRef} className={css(styles["root"])} id="detail-page-root">
-                {false && <img className={css(styles["overlay"])} src={adjustOverlay} alt='overlay'/>}
+                {falsenel && <img className={css(styles["overlay"])} src={adjustOverlay} alt='overlay'/>}
                 <div className={css(styles["upper-actions"])}>
                     <img className={css(styles["upper-action-back"])} src={menuBack} onClick={this.props.closePanelDetail} alt='detail page back button'/>
                     <img className={css(styles["upper-action-legend"])} src={menuLegend} onClick={this.toggleOutlines} alt='detail page legend button'/>
