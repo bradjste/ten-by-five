@@ -1074,7 +1074,8 @@ class DetailPage extends Component {
                 color: orange,
                 margin: 'auto 0',
                 fontFamily: 'brandon-grotesque',
-                letterSpacing: '0.25em',
+                fontSize: '1vw',
+                letterSpacing: '0.25vw',
                 transform: 'translateX(-3%)'
             },
             'print-amount-wrapper': {
@@ -1219,12 +1220,12 @@ class DetailPage extends Component {
                     mouseXPercent: clientX / innerWidth,
                     mouseYPercent: clientY / innerHeight
                 }
-            })
+            }, console.log(this.state.mouseXPercent))
         }
 
         const {styles} = this.state;
         return (
-        <div onMouseMove={onMouseMove} className={css(styles["root-wrap"])}>
+        <div onMouseOver={onMouseMove} className={css(styles["root-wrap"])}>
             <div ref={this.rootRef} className={css(styles["root"])} id="detail-page-root">
                 {false && <img className={css(styles["overlay"])} src={adjustOverlay} alt='overlay'/>}
                 <div className={css(styles["upper-actions"])}>
