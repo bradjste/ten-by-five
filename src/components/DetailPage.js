@@ -622,7 +622,7 @@ class DetailPage extends Component {
             },
             'back-line': {
                 background: orange,
-                height: `1px`,
+                height: `0.5px`,
                 width: `${calculateStyle('back-line', 'width')}%`,
                 alignSelf: 'end'
             },
@@ -686,7 +686,7 @@ class DetailPage extends Component {
                 width: `100%`,
                 height: `${13.54 * (298/260) * rootWidth}vw`,
                 //height: `${calculateStyle('title-box','height')}%`,
-                border: `solid ${orange} 1px`,
+                border: `solid ${orange} 1.5px`,
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 background: 'white',
@@ -804,7 +804,7 @@ class DetailPage extends Component {
             'swatch': {
                 width: `${calculateStyle('swatch','width') * rootWidth}vw`,
                 height: `${calculateStyle('swatch','height') * rootWidth}vw`,
-                outline: `solid 1px ${orange}`,
+                outline: `solid 1.5px ${orange}`,
             },
             'swatch-fig': {
                 width: `${calculateStyle('swatch-fig','width')}%`,
@@ -940,10 +940,8 @@ class DetailPage extends Component {
                 display: 'flex',
                 justifyContent: 'space-between',
                 height: `${calculateStyle('value-block','height')}%`,
-                width: '-webkit-fill-available',
-                // eslint-disable-next-line
                 width: '-moz-available',
-                // eslint-disable-next-line
+                width: '-webkit-fill-available',
                 width: 'fill-available',
                 left: '-12px'
             },
@@ -1096,7 +1094,7 @@ class DetailPage extends Component {
             'dotted-swatch-line': {
                 position: 'absolute',
                 width: `10%`,
-                height: '1px',
+                height: '1.5px',
                 left: `${calculateStyle('dotted-swatch-line','left')}%`,
                 top: `${calculateStyle('dotted-swatch-line','top')}%`
             }, 
@@ -1114,9 +1112,8 @@ class DetailPage extends Component {
             }, 
             'fourth-render-tag': {
                 position: 'absolute',
-                transform: 'scaleX(1.45)',
                 width: `${calculateStyle('fourth-render-tag','width')}%`,
-                left: `${calculateStyle('fourth-render-tag','left')}%`,
+                left: `${calculateStyle('fourth-render-frame','left') + calculateStyle('fourth-render-frame','width')}%`,
                 top: `${calculateStyle('fourth-render-tag','top')}%`
             }, 
             'fourth-render-line': {
