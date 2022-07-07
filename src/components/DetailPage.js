@@ -74,7 +74,7 @@ import cost2 from '../img/V-12_Cost-2.svg';
 import usd from '../img/V-13_usd.svg';
 import valueSvg2 from '../img/V-13_Value-2.svg';
 
-import adjustOverlay from '../img/PP-Guide-900.png'
+import adjustOverlay from '../img/PP-Guide-1080.png'
 
 // const baseViewportWidth = 1900
 
@@ -107,17 +107,17 @@ const aspectValues = {
     'panel-col': {
         top: {
             '4/3': 10.21,
-            '16/9': 7,
+            '16/9': 7.5,
             '32/15': 4.3
         },
         left: {
             '4/3': 23.22,
-            '16/9': 26.9,
+            '16/9': 25.8,
             '32/15': 27.4
         },
         width: {
             '4/3': 37.4,
-            '16/9': 30.05,
+            '16/9': 32.3,
             '32/15': 29.03
         },
         height: {
@@ -134,17 +134,17 @@ const aspectValues = {
         },
         width: {
             '4/3': 33,
-            '16/9': 36.5,
+            '16/9': 36.46,
             '32/15': 36.4
         },
         left: {
             '4/3': 62.64,
-            '16/9': 59,
+            '16/9': 59.15,
             '32/15': 59.22
         },
         height: {
             '4/3': 84,
-            '16/9': 82,
+            '16/9': 85.5,
             '32/15': 90.5
         }
     },
@@ -163,7 +163,7 @@ const aspectValues = {
     'fourth-render-frame': {
         width: {
             '4/3': 50,
-            '16/9': 35.5,
+            '16/9': 39,
             '32/15': 35
         },
         left: {
@@ -173,7 +173,7 @@ const aspectValues = {
         },
         top: {
             '4/3': 16,
-            '16/9': 16,
+            '16/9': 12,
             '32/15': 11
         }
     },
@@ -185,29 +185,29 @@ const aspectValues = {
         },
         left: {
             '4/3': 5.5,
-            '16/9': 5.8,
+            '16/9': 7.8,
             '32/15': 2.5
         },
         top: {
             '4/3': 20,
-            '16/9': 20,
+            '16/9': 19,
             '32/15': 18
         }
     },
     'fourth-render-tag': {
         width: {
             '4/3': 25,
-            '16/9': 18,
+            '16/9': 15,
             '32/15': 15
         },
         left: {
             '4/3': 52.9,
-            '16/9': 39.3,
+            '16/9': 46.3,
             '32/15': 38.2
         },
         top: {
             '4/3': 25,
-            '16/9': 25,
+            '16/9': 21,
             '32/15': 21
         }
     },
@@ -231,17 +231,17 @@ const aspectValues = {
     'rating-group': {
         width: {
             '4/3': 19,
-            '16/9': 15,
+            '16/9': 17,
             '32/15': 17.3
         },
         left: {
             '4/3': 68,
-            '16/9': 50,
+            '16/9': 53.5,
             '32/15': 45.55
         },
         top: {
             '4/3': 53.8,
-            '16/9': 55.8,
+            '16/9': 49.3,
             '32/15': 53
         }
     },
@@ -288,7 +288,7 @@ const aspectValues = {
     'lower-block': {
         marginTop: {
             '4/3': 18,
-            '16/9': 12,
+            '16/9': 8.8,
             '32/15': 6.7
         }
     },
@@ -302,22 +302,34 @@ const aspectValues = {
     'second-render': {
         top: {
             '4/3': 2.5,
-            '16/9': 2.6,
+            '16/9': 1.75,
             '32/15': 2.2
         }
     },
     'swatch': {
         width: {
-            '4/3': 94,
-            '16/9': 80,
-            '32/15': 70
+            '4/3': 4.1,
+            '16/9': 4.1,
+            '32/15': 3.74
+        },
+        height: {
+            '4/3': 4.1,
+            '16/9': 4.1,
+            '32/15': 3.74
         }
     },
     'swatch-block': {
         height: {
             '4/3': 63,
-            '16/9': 68,
+            '16/9': 70,
             '32/15': 65
+        }
+    },
+    'swatch-fig': {
+        width: {
+            '4/3': 18.5,
+            '16/9': 18.5,
+            '32/15': 19
         }
     },
     'swatch-items': {
@@ -328,7 +340,7 @@ const aspectValues = {
         },
         width: {
             '4/3': 91,
-            '16/9': 67,
+            '16/9': 72,
             '32/15': 66.7
         }
     },
@@ -340,40 +352,70 @@ const aspectValues = {
         },
         top: {
             '4/3': 19.5,
-            '16/9': 7,
+            '16/9': 7.6,
             '32/15': 7
         },
         width: {
             '4/3': 73,
             '16/9': 65,
             '32/15': 65
+        },
+        left: {
+            '4/3': 25,
+            '16/9': 25,
+            '32/15': 24.8
         }
     },
     'cast-icon-1': {
         top: {
             '4/3': 50,
-            '16/9': 54,
+            '16/9': 49,
             '32/15': 51
+        },
+        width: {
+            '4/3': 25,
+            '16/9': 29,
+            '32/15': 25
         }
     },
     'cast-icon-2': {
         top: {
             '4/3': 51,
-            '16/9': 56,
+            '16/9': 52,
             '32/15': 53
+        },
+        left: {
+            '4/3': 112,
+            '16/9': 123,
+            '32/15': 112
+        },
+        width: {
+            '4/3': 21,
+            '16/9': 23,
+            '32/15': 21
         }
     },
     'cast-baby': {
         top: {
             '4/3': 22.5,
-            '16/9': 13.5,
+            '16/9': 9,
             '32/15': 13.5
+        },
+        left: {
+            '4/3': 140,
+            '16/9': 153,
+            '32/15': 140
+        },
+        width: {
+            '4/3': 80,
+            '16/9': 83,
+            '32/15': 80
         }
     },
     'upper-block': {
         height: {
             '4/3': 57.5,
-            '16/9': 55,
+            '16/9': 53,
             '32/15': 58.5
         }
     },
@@ -404,7 +446,7 @@ const aspectValues = {
     'value-block': {
         height: {
             '4/3': 19.5,
-            '16/9': 22.5,
+            '16/9': 19.5,
             '32/15': 20
         }
     },
@@ -416,22 +458,46 @@ const aspectValues = {
         },
         top: {
             '4/3': 0,
-            '16/9': -11,
+            '16/9': -9,
             '32/15': -10.4
+        }
+    },
+    'info-themes-group': {
+        top: {
+            '4/3': 72,
+            '16/9': 72,
+            '32/15': 70
         }
     },
     'theme-icon-1': {
         top: {
             '4/3': 10,
-            '16/9': 6,
+            '16/9': 8,
+            '32/15': 8
+        },
+        left: {
+            '4/3': 36,
+            '16/9': 36,
+            '32/15': 37
+        }
+    },
+    'theme-icon-2': {
+        top: {
+            '4/3': 10,
+            '16/9': 8,
             '32/15': 8
         }
     },
     'value-amount': {
         fontSize: {
-            '4/3': 250,
-            '16/9': 220,
-            '32/15': 250
+            '4/3': 2.5,
+            '16/9': 2.5,
+            '32/15': 2.5
+        },
+        letterSpacing: {
+            '4/3': .5,
+            '16/9': .5,
+            '32/15': .5
         }
     }
 };
@@ -485,7 +551,9 @@ class DetailPage extends Component {
             showBar: true,
             stabilize: false,
             cast1Src: cast1,
-            cast2Src: cast2
+            cast2Src: cast2,
+            mouseXPercent: .5,
+            mouseYPercent: .5
         };
         this.toggleStats = this.toggleStats.bind(this);
         this.toggleStabilize = this.toggleStabilize.bind(this);
@@ -527,7 +595,7 @@ class DetailPage extends Component {
             'upper-actions': {
                 display: 'flex',
                 position: 'absolute',
-                top: `3.5%`,
+                top: `2.9%`,
                 left: `2.05%`,
                 width: `4.3%`,
                 justifyContent: 'space-between'
@@ -579,7 +647,8 @@ class DetailPage extends Component {
                 height: `${calculateStyle('panel-col','height')}%`,
                 alignItems: 'center',
                 display: 'flex',
-                background: this.state.stabilize ? 'rgba(0,255,0,.1)' : 'none'
+                background: this.state.stabilize ? 'rgba(0,255,0,.1)' : 'none',
+                transform: `rotate3d(${this.state.mouseXPercent ?? 0}, ${this.state.mouseYPercent ?? 0}, 0, ${-90 + 180 * this.state.mouseXPercent}deg)`
             },
             'info-col': {
                 outline: this.state.stabilize ? '1px solid pink' : '',
@@ -733,12 +802,12 @@ class DetailPage extends Component {
                 transform: 'translate(0, 25%)'
             },
             'swatch': {
-                width: `${3.73 * rootWidth}vw`,
-                height: `${3.73 * rootWidth}vw`,
+                width: `${calculateStyle('swatch','width') * rootWidth}vw`,
+                height: `${calculateStyle('swatch','height') * rootWidth}vw`,
                 outline: `solid 1px ${orange}`,
             },
             'swatch-fig': {
-                width: `19%`,
+                width: `${calculateStyle('swatch-fig','width')}%`,
                 marginBottom: 'auto',
                 paddingRight: `12%`
             },
@@ -772,7 +841,7 @@ class DetailPage extends Component {
                 position: `absolute`,
                 width: `${calculateStyle('info-center-group','width')}%`,
                 top: `${calculateStyle('info-center-group','top')}%`,
-                left: `24.8%`,
+                left: `${calculateStyle('info-center-group','left')}%`,
                 height: `${calculateStyle('info-center-group','height')}%`,
                 // transform: `translate(-50%,-50%)`
             },
@@ -803,7 +872,7 @@ class DetailPage extends Component {
             'info-themes-group': {
                 position: `absolute`,
                 width: `28%`,
-                top: `70%`,
+                top: `${calculateStyle('info-themes-group','top')}%`,
                 left: `60.2%`,
                 height: 'inherit'
                 // transform: `translate(-50%,-50%)`
@@ -850,8 +919,9 @@ class DetailPage extends Component {
             },
             'value-text': {
                 width: 'fit-content',
+                fontSize: '0.9vw',
                 fontFamily: 'brandon-grotesque',
-                letterSpacing: '.25em',
+                letterSpacing: '.18vw',
                 color: orange,
                 fontWeight: '300'
             },
@@ -904,7 +974,7 @@ class DetailPage extends Component {
             'theme-icon-1': {
                 width:`17.8%`,
                 position: 'absolute',
-                left:`37%`,
+                left: `${calculateStyle('theme-icon-1','left')}%`,
                 top: `${calculateStyle('theme-icon-1','top')}%`
             },
             'theme-icon-2': {
@@ -927,22 +997,22 @@ class DetailPage extends Component {
             },
             'cast-icon-1': {
                 cursor: "pointer",
-                width:`25%`,
+                width: `${calculateStyle('cast-icon-1','width')}%`,
                 position: 'absolute',
                 left:`79%`,
                 top: `${calculateStyle('cast-icon-1','top')}%`
             },
             'cast-icon-2': {
                 cursor: "pointer",
-                width:`21%`,
+                width: `${calculateStyle('cast-icon-2','width')}%`,
                 position: 'absolute',
-                left:`112%`,
+                left: `${calculateStyle('cast-icon-2','left')}%`,
                 top: `${calculateStyle('cast-icon-2','top')}%`
             },
             'cast-baby': {
-                width:`80%`,
+                width: `${calculateStyle('cast-baby','width')}%`,
                 position: 'absolute',
-                left:`140%`,
+                left: `${calculateStyle('cast-baby','left')}%`,
                 top: `${calculateStyle('cast-baby','top')}%`
             },
             // 'cast-tag': {
@@ -991,10 +1061,10 @@ class DetailPage extends Component {
                 color: orange,
                 marginTop: 'auto',
                 lineHeight: '65%',
-                fontSize: `${calculateStyle('value-amount','fontSize')}%`,
+                fontSize: `${calculateStyle('value-amount','fontSize')}vw`,
                 fontFamily: 'brandon-grotesque',
                 fontWeight: 100,
-                letterSpacing: '.18em'
+                letterSpacing: `${calculateStyle('value-amount','letterSpacing')}vw`,
             },
             'usd': {
                 marginTop: 'auto',
@@ -1139,8 +1209,22 @@ class DetailPage extends Component {
             temp.fig3 = fig3
         }
 
+        const onMouseMove = event => {
+            this.setState(prevState => {
+                const {innerWidth, innerHeight} = window;
+                const {clientX, clientY} = event;
+                console.log(clientX, clientY)
+                return {
+                    update: prevState.update++,
+                    mouseXPercent: clientX / innerWidth,
+                    mouseYPercent: clientY / innerHeight
+                }
+            })
+        }
+
         const {styles} = this.state;
-        return (<div className={css(styles["root-wrap"])}>
+        return (
+        <div onMouseMove={onMouseMove} className={css(styles["root-wrap"])}>
             <div ref={this.rootRef} className={css(styles["root"])} id="detail-page-root">
                 {false && <img className={css(styles["overlay"])} src={adjustOverlay} alt='overlay'/>}
                 <div className={css(styles["upper-actions"])}>
